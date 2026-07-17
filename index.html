@@ -699,15 +699,13 @@
   function whyText(m, mode, rank) {
     const bj = (m.base / Math.max(m.job, 1)).toFixed(2)
     const jb = (m.job / Math.max(m.base, 1)).toFixed(2)
-    const fit = fitInfo(m)
-    const fitPart = getWeaponId() === "none" ? "" : ` · 무기적합 ${fit.label}`
     if (mode === "base") {
-      return `Base ${m.base.toLocaleString()} (Base/Job ${bj}) · ${rank}순위${fitPart}`
+      return `Base ${m.base.toLocaleString()} (Base/Job ${bj}) · ${rank}순위`
     }
     if (mode === "job") {
-      return `Job ${m.job.toLocaleString()} (Job/Base ${jb}) · ${rank}순위${fitPart}`
+      return `Job ${m.job.toLocaleString()} (Job/Base ${jb}) · ${rank}순위`
     }
-    return `Total ${m.total.toLocaleString()} · ${rank}순위${fitPart}`
+    return `Total ${m.total.toLocaleString()} · ${rank}순위`
   }
 
   function getLevel() {
@@ -803,10 +801,6 @@
       mode === "job" ? '<span class="badge job">Job</span>' :
       '<span class="badge main">균형</span>'
     const sizeLabel = m.size || "크기 미확인"
-    const fit = fitInfo(m)
-    const fitBadge = getWeaponId() === "none"
-      ? ""
-      : `<span class="badge ${fit.cls}">${fit.label}</span>`
     return `
       <article class="card rank-${rank}">
         <div class="badge-row">
@@ -814,7 +808,6 @@
           ${modeBadge}
           <span class="badge">Lv.${m.lv}</span>
           <span class="badge">${sizeLabel}</span>
-          ${fitBadge}
           <span class="badge">${m.elem || "-"}</span>
         </div>
         <h3 class="name">${m.ko}</h3>
