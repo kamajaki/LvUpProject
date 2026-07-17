@@ -180,6 +180,9 @@
     .page-shell { padding: 12px; }
     header h1 { font-size: 1.25rem; word-break: keep-all; }
     header p { font-size: 0.88rem; }
+    .credit { padding: 4px 10px 4px 5px; }
+    .credit-mark { width: 24px; height: 24px; border-radius: 6px; }
+    .credit-name { font-size: 0.78rem; white-space: normal; }
     .panel { padding: 14px; margin-top: 14px; }
     .section-title { margin: 18px 0 10px; font-size: 1.05rem; }
     .mode button { min-width: 0; font-size: 0.85rem; padding: 0 6px; }
@@ -200,12 +203,67 @@
     footer { font-size: 0.75rem; word-break: keep-all; }
   }
 
+  header .title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 14px;
+    margin: 0 0 8px;
+  }
   header h1 {
-    margin: 0 0 6px;
+    margin: 0;
     font-size: 1.7rem;
     letter-spacing: -0.03em;
     font-weight: 800;
     text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+  }
+  .credit {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 11px 5px 6px;
+    border-radius: 999px;
+    border: 1px solid rgba(91, 143, 217, 0.35);
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(232, 242, 255, 0.88) 100%);
+    box-shadow: 0 4px 14px rgba(28, 25, 21, 0.06);
+    text-decoration: none;
+    color: inherit;
+    max-width: 100%;
+  }
+  .credit-mark {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    border-radius: 7px;
+    flex: 0 0 auto;
+    background: rgba(255,255,255,0.7);
+    box-shadow: 0 0 0 1px rgba(91, 143, 217, 0.25);
+  }
+  .credit-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    line-height: 1.15;
+    min-width: 0;
+  }
+  .credit-by {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #5b7fb0;
+  }
+  .credit-name {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .credit-name em {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--muted);
   }
   header p {
     margin: 0;
@@ -458,7 +516,16 @@
 
   <div class="wrap">
     <header>
-      <h1>라그나로크 M Classic 레벨링 도우미</h1>
+      <div class="title-row">
+        <h1>라그나로크 M Classic 레벨링 도우미</h1>
+        <div class="credit" title="새벽길드 · 클라우디">
+          <img class="credit-mark" src="assets/guild-saebyeok-mark.png" alt="" width="28" height="28" />
+          <span class="credit-text">
+            <span class="credit-by">Made by</span>
+            <span class="credit-name">새벽길드 <em>· 클라우디</em></span>
+          </span>
+        </div>
+      </div>
       <p>내 레벨을 입력하면 <strong>레벨 ~ 레벨+30</strong> 구간에서 추천 몹 3마리를 자세히 보여줍니다. 비우면 전체 목록을 봅니다.</p>
     </header>
 
