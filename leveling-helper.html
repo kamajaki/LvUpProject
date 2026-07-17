@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>라그나로크 M Classic 레벨링 도우미</title>
+<style>
+  :root {
+    --bg: #f3efe6;
+    --bg2: #ebe4d6;
+    --ink: #1c1915;
+    --muted: #6b645a;
+    --line: #d4cbb8;
+    --card: #fffdf8;
+    --accent: #1f6b4a;
+    --accent2: #0e4d38;
+    --base: #1a5f8a;
+    --job: #8a4a1a;
+    --warn: #7a2e2e;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  body {
+    font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    color: var(--ink);
+    line-height: 1.45;
+    background: var(--bg);
+    position: relative;
+    min-height: 100vh;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+      url("assets/bg-romc.jpg") center top / cover no-repeat;
+    transform: scale(1.02);
+  }
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(180deg, rgba(243, 239, 230, 0.42) 0%, rgba(243, 239, 230, 0.62) 38%, rgba(235, 228, 214, 0.78) 100%),
+      radial-gradient(ellipse at 80% 12%, rgba(255, 255, 255, 0.25) 0%, transparent 42%),
+      radial-gradient(ellipse at 12% 88%, rgba(31, 107, 74, 0.1) 0%, transparent 38%);
+  }
+  @media (max-width: 768px) {
+    body::before {
+      background-position: 68% 15%;
+      background-size: cover;
+    }
+    body::after {
+      background:
+        linear-gradient(180deg, rgba(243, 239, 230, 0.5) 0%, rgba(243, 239, 230, 0.72) 48%, rgba(235, 228, 214, 0.86) 100%);
+    }
+  }
+  /* 광고 OFF: 본문만 가운데 */
+  .page-shell {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 18px 60px;
+  }
+  .wrap {
+    width: 100%;
+    max-width: 1100px;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /*
+  ========== 광고 ON 시: 아래 CSS 주석 해제 + HTML 광고 주석도 해제 ==========
+  :root {
+    --ad-w: clamp(100px, 11vw, 160px);
+    --ad-h: clamp(360px, 70vh, 600px);
+  }
+  .page-shell {
+    display: grid;
+    grid-template-columns: var(--ad-w) minmax(0, 1100px) var(--ad-w);
+    grid-template-areas: "ad-left main ad-right";
+    justify-content: center;
+    gap: clamp(10px, 1.5vw, 18px);
+    width: 100%;
+    max-width: 1460px;
+    margin: 0 auto;
+    padding: 28px 12px 60px;
+    align-items: start;
+  }
+  .ad-rail-left { grid-area: ad-left; min-width: 0; }
+  .wrap { grid-area: main; }
+  .ad-rail-right { grid-area: ad-right; min-width: 0; }
+  .ad-rail {
+    position: sticky;
+    top: 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .ad-slot {
+    width: 100%;
+    min-height: var(--ad-h);
+    border: 1px dashed #b9a98e;
+    border-radius: 10px;
+    background:
+      repeating-linear-gradient(
+        -45deg,
+        #f7f2e8,
+        #f7f2e8 10px,
+        #efe7d8 10px,
+        #efe7d8 20px
+      );
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px 10px;
+    font-size: 0.82rem;
+    line-height: 1.35;
+  }
+  .ad-slot strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--ink);
+    font-size: 0.9rem;
+  }
+  .ad-slot span { font-size: 0.72rem; opacity: 0.85; }
+  .ad-slot .ad-size-pc { display: inline; }
+  .ad-slot .ad-size-mobile { display: none; }
+  .ad-label-side { display: inline; }
+  .ad-label-top { display: none; }
+  .ad-slot.live {
+    background: #fff;
+    border-style: solid;
+    min-height: auto;
+    padding: 0;
+  }
+  @media (max-width: 1100px) and (min-width: 769px) {
+    :root {
+      --ad-w: clamp(90px, 10vw, 120px);
+      --ad-h: clamp(320px, 60vh, 500px);
+    }
+    .page-shell { max-width: 100%; padding: 22px 10px 48px; }
+  }
+  @media (max-width: 768px) {
+    :root { --ad-w: 100%; --ad-h: 80px; }
+    .page-shell {
+      display: flex;
+      flex-direction: column;
+      max-width: 100%;
+      padding: 12px;
+      gap: 12px;
+    }
+    .ad-rail { position: static; width: 100%; }
+    .ad-rail-left { order: 1; display: block; width: 100%; }
+    .wrap { order: 2; }
+    .ad-rail-right { display: none !important; }
+    .ad-slot { width: 100%; min-height: var(--ad-h); padding: 10px; }
+    .ad-slot .ad-size-pc { display: none; }
+    .ad-slot .ad-size-mobile { display: inline; }
+    .ad-label-side { display: none; }
+    .ad-label-top { display: inline; }
+  }
+  ========== 광고 CSS 끝 ==========
+  */
+
+  @media (max-width: 768px) {
+    .page-shell { padding: 12px; }
+    header h1 { font-size: 1.25rem; word-break: keep-all; }
+    header p { font-size: 0.88rem; }
+    .panel { padding: 14px; margin-top: 14px; }
+    .section-title { margin: 18px 0 10px; font-size: 1.05rem; }
+    .mode button { min-width: 0; font-size: 0.85rem; padding: 0 6px; }
+    .table-wrap {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      max-height: 55vh;
+      border: 1px solid var(--line);
+      background: var(--card);
+    }
+    table {
+      width: max-content;
+      min-width: 100%;
+      border: none;
+    }
+    footer { font-size: 0.75rem; word-break: keep-all; }
+  }
+
+  header h1 {
+    margin: 0 0 6px;
+    font-size: 1.7rem;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+  }
+  header p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.55);
+  }
+  .panel {
+    margin-top: 22px;
+    background: rgba(255, 253, 248, 0.96);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 32px rgba(28, 25, 21, 0.08);
+  }
+  .controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 700px) {
+    .controls { grid-template-columns: 1fr; }
+  }
+  label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  input[type="number"], select, input[type="search"] {
+    width: 100%;
+    height: 42px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 0 12px;
+    font-size: 1rem;
+    background: #fff;
+    color: var(--ink);
+  }
+  .input-clear-wrap {
+    position: relative;
+  }
+  .input-clear-wrap input[type="number"] {
+    padding-right: 40px;
+  }
+  .input-clear {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--muted);
+    font-size: 1.15rem;
+    line-height: 1;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .input-clear:hover {
+    background: var(--bg2);
+    color: var(--ink);
+  }
+  .input-clear-wrap.has-value .input-clear {
+    display: inline-flex;
+  }
+  .mode {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .mode button {
+    flex: 1;
+    min-width: 90px;
+    height: 42px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--ink);
+  }
+  .mode button.active-balance { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .mode button.active-base { background: var(--base); color: #fff; border-color: var(--base); }
+  .mode button.active-job { background: var(--job); color: #fff; border-color: var(--job); }
+  .hint {
+    margin-top: 12px;
+    padding: 10px 12px;
+    background: var(--bg2);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .hint strong { color: var(--ink); }
+  .section-title {
+    margin: 28px 0 12px;
+    font-size: 1.15rem;
+    font-weight: 800;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 900px) {
+    .cards { grid-template-columns: 1fr; }
+  }
+  .card {
+    background: rgba(255, 253, 248, 0.94);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 6px 20px rgba(28, 25, 21, 0.05);
+  }
+  .card.rank-1 { border-color: var(--accent); border-width: 2px; }
+  .badge-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+  .badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: var(--bg2);
+    color: var(--muted);
+  }
+  .badge.main { background: #d7ebe1; color: var(--accent2); }
+  .badge.base { background: #d9e8f2; color: var(--base); }
+  .badge.job { background: #f2e4d9; color: var(--job); }
+  .name { font-size: 1.15rem; font-weight: 800; margin: 0; }
+  .en { color: var(--muted); font-size: 0.82rem; margin: 0; }
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    font-size: 0.88rem;
+  }
+  .stat {
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 8px;
+  }
+  .stat span { display: block; color: var(--muted); font-size: 0.72rem; font-weight: 700; }
+  .stat b { font-size: 0.98rem; }
+  .why {
+    font-size: 0.88rem;
+    color: var(--ink);
+    background: var(--bg2);
+    border-radius: 8px;
+    padding: 8px 10px;
+  }
+  .meta { font-size: 0.82rem; color: var(--muted); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 253, 248, 0.94);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    font-size: 0.88rem;
+  }
+  th, td {
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    white-space: nowrap;
+  }
+  th {
+    background: var(--bg2);
+    font-size: 0.78rem;
+    color: var(--muted);
+    position: sticky;
+    top: 0;
+  }
+  tr:hover td { background: #f8f4ec; }
+  .table-wrap {
+    overflow: auto;
+    max-height: 62vh;
+    border-radius: 14px;
+    max-width: 100%;
+  }
+  .empty {
+    padding: 24px;
+    text-align: center;
+    color: var(--muted);
+    background: var(--card);
+    border: 1px dashed var(--line);
+    border-radius: 14px;
+  }
+  footer {
+    margin-top: 28px;
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+  }
+  .maps {
+    margin-top: 4px;
+    padding: 10px;
+    background: #eef5f0;
+    border-radius: 8px;
+  }
+  .map-title {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--accent2);
+    margin-bottom: 6px;
+  }
+  .map-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .map-pill {
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #b7d2c3;
+    color: var(--accent2);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 9px;
+    border-radius: 999px;
+  }
+  .map-note, .map-empty {
+    margin-top: 6px;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+  <div class="page-shell">
+    <!--
+    ===== 광고 ON 시: 이 주석 해제 + CSS의 광고 주석도 해제 =====
+    <aside class="ad-rail ad-rail-left" aria-label="왼쪽 광고 영역">
+      <div class="ad-slot" data-ad-slot="left">
+        <strong><span class="ad-label-side">광고 자리 (좌)</span><span class="ad-label-top">광고 영역</span></strong>
+        <span class="ad-size-pc">PC/태블릿 세로형</span>
+        <span class="ad-size-mobile">모바일 상단 배너</span>
+        <span>승인 후 여기에 코드 삽입</span>
+      </div>
+    </aside>
+    ===== 광고 왼쪽 끝 =====
+    -->
+
+  <div class="wrap">
+    <header>
+      <h1>라그나로크 M Classic 레벨링 도우미</h1>
+      <p>내 레벨을 입력하면 <strong>레벨 ~ 레벨+30</strong> 구간에서 추천 몹 3마리를 자세히 보여줍니다. 비우면 전체 목록을 봅니다.</p>
+    </header>
+
+    <section class="panel">
+      <div class="controls">
+        <div>
+          <label for="level">내 Base 레벨 (비우면 전체 보기)</label>
+          <div class="input-clear-wrap" id="levelWrap">
+            <input id="level" type="number" min="1" max="200" placeholder="예: 45" />
+            <button type="button" class="input-clear" id="levelClear" aria-label="레벨 입력 지우기" title="지우기">×</button>
+          </div>
+        </div>
+        <div>
+          <label>경험치 목적</label>
+          <div class="mode" id="mode">
+            <button type="button" data-mode="balance" class="active-balance">균형</button>
+            <button type="button" data-mode="base">Base 위주</button>
+            <button type="button" data-mode="job">Job 위주</button>
+          </div>
+        </div>
+      </div>
+      <div class="hint" id="hint">레벨을 입력하면 추천 3마리가 위에 나오고, 아래에 후보 전체도 볼 수 있어요.</div>
+    </section>
+
+    <h2 class="section-title" id="recoTitle">추천 몬스터 3종</h2>
+    <div class="cards" id="cards"></div>
+
+    <h2 class="section-title" id="listTitle">전체 / 후보 목록</h2>
+    <div class="panel" style="margin-top:0; padding-bottom:12px;">
+      <label for="q">이름 검색</label>
+      <input id="q" type="search" placeholder="예: 메탈러, Hydra" />
+    </div>
+    <div class="table-wrap" style="margin-top:12px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Lv</th>
+            <th>이름</th>
+            <th>속성</th>
+            <th>HP</th>
+            <th>Base</th>
+            <th>Job</th>
+            <th>Total</th>
+            <th>효율</th>
+            <th>출현위치</th>
+            <th>장비드롭</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+
+    <footer>
+      규칙: 사냥 구간 = 내 레벨 ~ 내 레벨+30 / 효율 = Total EXP ÷ HP × 1000<br />
+      알류·초고HP 몹(심연의 기사 등)은 레벨링 추천에서 제외했습니다.<br />
+      배경 이미지: Ragnarok M Classic 공식 홍보 자료 (팬 제작 가이드용)
+    </footer>
+  </div>
+
+    <!--
+    ===== 광고 ON 시: 이 주석 해제 =====
+    <aside class="ad-rail ad-rail-right" aria-label="오른쪽 광고 영역">
+      <div class="ad-slot" data-ad-slot="right">
+        <strong><span class="ad-label-side">광고 자리 (우)</span><span class="ad-label-top">광고 영역</span></strong>
+        <span class="ad-size-pc">PC/태블릿 세로형</span>
+        <span class="ad-size-mobile">모바일 상단 배너</span>
+        <span>승인 후 여기에 코드 삽입</span>
+      </div>
+    </aside>
+    ===== 광고 오른쪽 끝 =====
+    -->
+  </div>
+
+  <script>
+  const MONSTERS = [{"lv": 1, "en": "Poring", "ko": "포링", "hp": 10, "flee": 2, "def": 0, "mdef": 6, "elem": "물", "base": 11, "job": 5, "total": 16, "eff": 1600.0, "drop": "Poring Hat", "card": "LUK +1  FLEE +1", "cardStar": "", "cardType": "Armor", "maps": [{"en": "Labyrinth Forest", "ko": "미궁의 숲"}, {"en": "Prontera North", "ko": "프론테라 북쪽"}, {"en": "Prontera South Gate", "ko": "프론테라 남문"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 2, "en": "Lunatic", "ko": "루나틱", "hp": 48, "flee": 6, "def": 0, "mdef": 29, "elem": "무속성", "base": 26, "job": 8, "total": 34, "eff": 708.33, "drop": "Clown Nose", "card": "LUK +1  CRI +1", "cardStar": "CRI.RES +30", "cardType": "Weapon", "maps": [{"en": "Labyrinth Forest", "ko": "미궁의 숲"}, {"en": "Prontera South Gate", "ko": "프론테라 남문"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 3, "en": "Fabre", "ko": "파브르", "hp": 60, "flee": 4, "def": 0, "mdef": 0, "elem": "땅", "base": 28, "job": 19, "total": 47, "eff": 783.33, "drop": "", "card": "VIT +1  Max HP +50", "cardStar": "", "cardType": "Weapon", "maps": [{"en": "Labyrinth Forest", "ko": "미궁의 숲"}, {"en": "Prontera North", "ko": "프론테라 북쪽"}, {"en": "Prontera South Gate", "ko": "프론테라 남문"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 11, "en": "Tarou", "ko": "타로우", "hp": 350, "flee": 8, "def": 0, "mdef": 0, "elem": "암흑", "base": 122, "job": 60, "total": 182, "eff": 520.0, "drop": "", "card": "STR +2  DEX +2 PATK +30", "cardStar": "STR +4  ATK +15", "cardType": "Accessory", "maps": [{"en": "Capital Sewer 1F", "ko": "수도 하수도 1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 13, "en": "Thief Bug", "ko": "도둑벌레", "hp": 500, "flee": 8, "def": 0, "mdef": 0, "elem": "무속성", "base": 178, "job": 52, "total": 230, "eff": 460.0, "drop": "", "card": "HIT +10", "cardStar": "", "cardType": "Shield", "maps": [{"en": "Capital Sewer 1F", "ko": "수도 하수도 1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 13, "en": "Chon Chon", "ko": "촌촌", "hp": 625, "flee": 8, "def": 0, "mdef": 0, "elem": "바람", "base": 113, "job": 91, "total": 204, "eff": 326.4, "drop": "Gas Mask", "card": "STR +2", "cardStar": "", "cardType": "Footgear", "maps": [{"en": "Labyrinth Forest", "ko": "미궁의 숲"}, {"en": "Prontera West Gate", "ko": "프론테라 서문"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 15, "en": "Spore", "ko": "스포어", "hp": 600, "flee": 8, "def": 0, "mdef": 0, "elem": "물", "base": 81, "job": 133, "total": 214, "eff": 356.67, "drop": "Hat [1]", "card": "INT +2  VIT +2  MATK +30", "cardStar": "", "cardType": "Accessory", "maps": [{"en": "Capital Sewer 1F", "ko": "수도 하수도 1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 15, "en": "Yoyo", "ko": "요요", "hp": 450, "flee": 8, "def": 0, "mdef": 0, "elem": "땅", "base": 184, "job": 73, "total": 257, "eff": 571.11, "drop": "", "card": "AGI +2", "cardStar": "AGI +3  CRI +3", "cardType": "Accessory", "maps": [{"en": "Labyrinth Forest", "ko": "미궁의 숲"}, {"en": "Prontera West Gate", "ko": "프론테라 서문"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 17, "en": "Familiar", "ko": "패밀리어", "hp": 625, "flee": 10, "def": 0, "mdef": 0, "elem": "암흑", "base": 183, "job": 97, "total": 280, "eff": 448.0, "drop": "Ribbon [1]", "card": "INT +2  MATK +50", "cardStar": "MATK +3%  MATK +20", "cardType": "Weapon", "maps": [{"en": "Capital Sewer 1F", "ko": "수도 하수도 1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 17, "en": "Wormtail", "ko": "웜테일", "hp": 573, "flee": 87, "def": 135, "mdef": 134, "elem": "땅", "base": 162, "job": 110, "total": 272, "eff": 474.69, "drop": "", "card": "DEX +1  INT +4", "cardStar": "", "cardType": "Accessory", "maps": [{"en": "Prontera North", "ko": "프론테라 북쪽"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 19, "en": "Rocker", "ko": "로커", "hp": 500, "flee": 8, "def": 0, "mdef": 0, "elem": "땅", "base": 165, "job": 132, "total": 297, "eff": 594.0, "drop": "Green Feeler", "card": "STR +1  DEX +1  ATK +50", "cardStar": "DEX +2  ATK +20", "cardType": "Weapon", "maps": [{"en": "Labyrinth Forest", "ko": "미궁의 숲"}, {"en": "Prontera West Gate", "ko": "프론테라 서문"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 20, "en": "Thief Bug Female", "ko": "암컷 도둑벌레", "hp": 1500, "flee": 12, "def": 0, "mdef": 0, "elem": "암흑", "base": 219, "job": 113, "total": 332, "eff": 221.33, "drop": "", "card": "AGI +1  HIT +5", "cardStar": "", "cardType": "Weapon", "maps": [{"en": "Capital Sewer 2F", "ko": "수도 하수도 2층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 20, "en": "Thief Bug Male", "ko": "수컷 도둑벌레", "hp": 1500, "flee": 15, "def": 0, "mdef": 0, "elem": "암흑", "base": 241, "job": 100, "total": 341, "eff": 227.33, "drop": "Oxygen Mask", "card": "ASPD +3%", "cardStar": "", "cardType": "", "maps": [{"en": "Capital Sewer 2F", "ko": "수도 하수도 2층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 20, "en": "Creamy", "ko": "크리미", "hp": 1500, "flee": 30, "def": 0, "mdef": 0, "elem": "바람", "base": 193, "job": 128, "total": 321, "eff": 214.0, "drop": "Fancy Flower", "card": "텔레포트 Lv.1 사용 가능", "cardStar": "", "cardType": "", "maps": [{"en": "Labyrinth Forest", "ko": "미궁의 숲"}, {"en": "Mjolnir Mountains", "ko": "묘르닐 산맥"}, {"en": "Prontera South Gate", "ko": "프론테라 남문"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 21, "en": "Willow", "ko": "윌로우", "hp": 600, "flee": 8, "def": 0, "mdef": 0, "elem": "땅", "base": 183, "job": 146, "total": 329, "eff": 548.33, "drop": "Sakkat", "card": "Max SP +150 / 스킬 사용 시 SP 소모 -5% / 가변 시전시간 -5%", "cardStar": "MDEF +10  MDEF +5%", "cardType": "", "maps": [{"en": "Labyrinth Forest", "ko": "미궁의 숲"}, {"en": "Prontera West Gate", "ko": "프론테라 서문"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 22, "en": "Mandragora", "ko": "만드라고라", "hp": 1424, "flee": 8, "def": 0, "mdef": 0, "elem": "땅", "base": 204, "job": 146, "total": 350, "eff": 245.79, "drop": "", "card": "바람 속성 몬스터 데미지 +20%", "cardStar": "", "cardType": "Weapon", "maps": [{"en": "Labyrinth Forest", "ko": "미궁의 숲"}, {"en": "Mjolnir Mountains", "ko": "묘르닐 산맥"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 23, "en": "Hydra", "ko": "히드라", "hp": 1206, "flee": 20, "def": 0, "mdef": 0, "elem": "물", "base": 219, "job": 149, "total": 368, "eff": 305.14, "drop": "Flu Mask", "card": "인간형 몬스터 데미지 +15%", "cardStar": "인간형 몬스터 데미지 +15% / PVP·GVG 플레이어 데미지 +5%", "cardType": "Weapon", "maps": [{"en": "Ghost Ship", "ko": "유령선"}, {"en": "Payon Cave 1F", "ko": "페이욘 동굴 1층"}, {"en": "Sunken Ship", "ko": "침몰선"}, {"en": "Underwater Cave", "ko": "해저 동굴"}, {"en": "Underwater Temple", "ko": "해저 신전"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 24, "en": "Wolf", "ko": "늑대", "hp": 1696, "flee": 30, "def": 0, "mdef": 0, "elem": "땅", "base": 242, "job": 147, "total": 389, "eff": 229.36, "drop": "Cap [1]", "card": "ATK +15  CRI +2  CRI.DMG +2%", "cardStar": "", "cardType": "Weapon", "maps": [{"en": "Labyrinth Forest", "ko": "미궁의 숲"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 25, "en": "Roda Frog", "ko": "로다 프로그", "hp": 1832, "flee": 10, "def": 0, "mdef": 0, "elem": "물", "base": 212, "job": 176, "total": 388, "eff": 211.79, "drop": "", "card": "Max HP +150  Max SP +50", "cardStar": "", "cardType": "Armor", "maps": [{"en": "Sunken Ship", "ko": "침몰선"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 26, "en": "Whisper", "ko": "위스퍼", "hp": 1206, "flee": 40, "def": 0, "mdef": 0, "elem": "염", "base": 195, "job": 198, "total": 393, "eff": 325.87, "drop": "Whisper Mask", "card": "염 속성 피격 데미지 +50% / FLEE +20", "cardStar": "", "cardType": "Garment", "maps": [{"en": "Ghost Ship", "ko": "유령선"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 27, "en": "Pirate Skeleton", "ko": "해적 스켈레톤", "hp": 2104, "flee": 20, "def": 0, "mdef": 0, "elem": "언데드", "base": 273, "job": 166, "total": 439, "eff": 208.65, "drop": "Pirate Bandana [1]", "card": "배시 Lv.6 사용 가능", "cardStar": "", "cardType": "Headgear", "maps": [{"en": "Sunken Ship", "ko": "침몰선"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 28, "en": "Poison Spore", "ko": "포이즌 스포어", "hp": 2240, "flee": 20, "def": 0, "mdef": 0, "elem": "독", "base": 311, "job": 155, "total": 466, "eff": 208.04, "drop": "Hat [1]", "card": "베놈 나이프 Lv.1 사용 가능", "cardStar": "", "cardType": "Accessory", "maps": [{"en": "Ghost Ship", "ko": "유령선"}, {"en": "Sunken Ship", "ko": "침몰선"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 29, "en": "Vadon", "ko": "바돈", "hp": 3200, "flee": 38, "def": 0, "mdef": 0, "elem": "물", "base": 288, "job": 180, "total": 468, "eff": 146.25, "drop": "", "card": "불 속성 몬스터 데미지 +20%", "cardStar": "", "cardType": "Weapon", "maps": [{"en": "Underwater Cave", "ko": "해저 동굴"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 30, "en": "Skeleton", "ko": "스켈레톤", "hp": 2520, "flee": 15, "def": 0, "mdef": 0, "elem": "언데드", "base": 264, "job": 206, "total": 470, "eff": 186.51, "drop": "Bandana", "card": "공격 시 3% 확률로 대상 5초간 스턴", "cardStar": "", "cardType": "Weapon", "maps": [{"en": "Ghost Ship", "ko": "유령선"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 31, "en": "Thara Frog", "ko": "타라 프로그", "hp": 2917, "flee": 44, "def": 0, "mdef": 0, "elem": "물", "base": 311, "job": 195, "total": 506, "eff": 173.47, "drop": "", "card": "인간형으로부터 받는 데미지 -30%", "cardStar": "인간형 몬스터 데미지 +3% / 인간형 피격 데미지 -3%", "cardType": "Armor", "maps": [{"en": "Underwater Cave", "ko": "해저 동굴"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 32, "en": "Marina", "ko": "마리나", "hp": 2618, "flee": 42, "def": 0, "mdef": 50, "elem": "물", "base": 321, "job": 206, "total": 527, "eff": 201.3, "drop": "Jellyfish Head [1]", "card": "공격 시 5% 확률로 대상 5초간 동결 / ATK +10", "cardStar": "", "cardType": "Weapon", "maps": [{"en": "Underwater Cave", "ko": "해저 동굴"}, {"en": "Underwater Temple", "ko": "해저 신전"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 33, "en": "Obeaune", "ko": "오베아운", "hp": 3711, "flee": 62, "def": 0, "mdef": 50, "elem": "물", "base": 336, "job": 212, "total": 548, "eff": 147.67, "drop": "Fin Helm", "card": "큐어 Lv.1 사용 가능", "cardStar": "", "cardType": "Accessory", "maps": [{"en": "Underwater Temple", "ko": "해저 신전"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 34, "en": "Phen", "ko": "펜", "hp": 4108, "flee": 52, "def": 0, "mdef": 50, "elem": "물", "base": 350, "job": 222, "total": 572, "eff": 139.24, "drop": "Fish in Mouth", "card": "시전 방해 저항 20%", "cardStar": "", "cardType": "Accessory", "maps": [{"en": "Underwater Temple", "ko": "해저 신전"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 35, "en": "Goblin (Knife)", "ko": "고블린 (단검)", "hp": 4505, "flee": 78, "def": 0, "mdef": 6, "elem": "바람", "base": 371, "job": 224, "total": 595, "eff": 132.08, "drop": "Strange Goblin Mask", "card": "동물형 몬스터 데미지 +15%", "cardStar": "", "cardType": "Weapon", "maps": [{"en": "Goblin Forest", "ko": "고블린 숲"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 35, "en": "Goblin (Buckler)", "ko": "고블린 (방패)", "hp": 4505, "flee": 46, "def": 0, "mdef": 6, "elem": "땅", "base": 364, "job": 229, "total": 593, "eff": 131.63, "drop": "Poker Face", "card": "", "cardStar": "", "cardType": "", "maps": [{"en": "Goblin Forest", "ko": "고블린 숲"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 35, "en": "Goblin (Hammer)", "ko": "고블린 (망치)", "hp": 4505, "flee": 44, "def": 0, "mdef": 6, "elem": "물", "base": 367, "job": 227, "total": 594, "eff": 131.85, "drop": "Annoyed Mask", "card": "", "cardStar": "", "cardType": "", "maps": [{"en": "Goblin Forest", "ko": "고블린 숲"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 35, "en": "Goblin (Spear)", "ko": "고블린 (창)", "hp": 4505, "flee": 44, "def": 0, "mdef": 6, "elem": "바람", "base": 369, "job": 226, "total": 595, "eff": 132.08, "drop": "Goblin Mask", "card": "", "cardStar": "", "cardType": "", "maps": [{"en": "Goblin Forest", "ko": "고블린 숲"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 35, "en": "Goblin (Axe)", "ko": "고블린 (도끼)", "hp": 4505, "flee": 48, "def": 0, "mdef": 6, "elem": "땅", "base": 410, "job": 202, "total": 612, "eff": 135.85, "drop": "Surprised Mask", "card": "", "cardStar": "", "cardType": "", "maps": [{"en": "Goblin Forest", "ko": "고블린 숲"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 36, "en": "Marc", "ko": "마르크", "hp": 4902, "flee": 72, "def": 0, "mdef": 50, "elem": "물", "base": 376, "job": 238, "total": 614, "eff": 125.25, "drop": "Grampa Bread", "card": "물 속성 피격 데미지 -15% / 동결 저항", "cardStar": "", "cardType": "Armor", "maps": [{"en": "Underwater Temple", "ko": "해저 신전"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 37, "en": "Goblin Archer", "ko": "고블린 아처", "hp": 4243, "flee": 43, "def": 0, "mdef": 0, "elem": "물", "base": 393, "job": 242, "total": 635, "eff": 149.66, "drop": "Evil Goblin Mask", "card": "크리티컬 데미지 +10% / 언데드 종족 CRI +20", "cardStar": "", "cardType": "Weapon", "maps": [{"en": "Goblin Forest", "ko": "고블린 숲"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 38, "en": "Hornet", "ko": "호넷", "hp": 4568, "flee": 28, "def": 0, "mdef": 6, "elem": "바람", "base": 357, "job": 281, "total": 638, "eff": 139.67, "drop": "Green Feeler", "card": "STR +1  ATK +10", "cardStar": "", "cardType": "Weapon", "maps": [{"en": "Labyrinth Forest", "ko": "미궁의 숲"}, {"en": "Mjolnir Mountains", "ko": "묘르닐 산맥"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 39, "en": "Steam Goblin", "ko": "스팀 고블린", "hp": 6093, "flee": 94, "def": 0, "mdef": 6, "elem": "바람", "base": 436, "job": 251, "total": 687, "eff": 112.75, "drop": "Smile Goblin Mask", "card": "크리티컬 데미지 +10% / 무형 종족 CRI +20", "cardStar": "", "cardType": "Weapon", "maps": [{"en": "Goblin Forest", "ko": "고블린 숲"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 40, "en": "Deniro", "ko": "데니로", "hp": 8156, "flee": 38, "def": 63, "mdef": 16, "elem": "땅", "base": 430, "job": 270, "total": 700, "eff": 85.83, "drop": "Safety Helmet", "card": "ATK +10", "cardStar": "PEN +3% / STR 또는 DEX 225 초과 시 Ignore DEF +3%", "cardType": "Weapon", "maps": [{"en": "Ant Hell 1F", "ko": "개미지옥 1층"}, {"en": "Ant Hell 2F", "ko": "개미지옥 2층"}, {"en": "Sograt Desert", "ko": "소그라트 사막"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 41, "en": "Flora", "ko": "플로라", "hp": 5699, "flee": 52, "def": 11, "mdef": 13, "elem": "땅", "base": 449, "job": 284, "total": 733, "eff": 128.62, "drop": "Hibiscus", "card": "어류 몬스터 데미지 +15%", "cardStar": "", "cardType": "Weapon", "maps": [{"en": "Mjolnir Mountains", "ko": "묘르닐 산맥"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 42, "en": "Piere", "ko": "피에르", "hp": 9056, "flee": 36, "def": 26, "mdef": 12, "elem": "땅", "base": 466, "job": 298, "total": 764, "eff": 84.36, "drop": "", "card": "ATK +10", "cardStar": "PEN +3% / STR 또는 DEX 225 초과 시 Ignore DEF +3%", "cardType": "Weapon", "maps": [{"en": "Ant Hell 1F", "ko": "개미지옥 1층"}, {"en": "Ant Hell 2F", "ko": "개미지옥 2층"}, {"en": "Sograt Desert", "ko": "소그라트 사막"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 43, "en": "Argiope", "ko": "아르지오페", "hp": 6657, "flee": 82, "def": 86, "mdef": 6, "elem": "독", "base": 563, "job": 266, "total": 829, "eff": 124.53, "drop": "Gas Mask", "card": "갑옷을 독 속성으로 변경 / DEF +20", "cardStar": "", "cardType": "Armor", "maps": [{"en": "Labyrinth Forest", "ko": "미궁의 숲"}, {"en": "Mjolnir Mountains", "ko": "묘르닐 산맥"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 44, "en": "Andre", "ko": "앙드레", "hp": 9956, "flee": 34, "def": 22, "mdef": 12, "elem": "땅", "base": 500, "job": 327, "total": 827, "eff": 83.07, "drop": "", "card": "ATK +10", "cardStar": "PEN +3% / STR 또는 DEX 225 초과 시 Ignore DEF +3%", "cardType": "Weapon", "maps": [{"en": "Ant Hell 1F", "ko": "개미지옥 1층"}, {"en": "Ant Hell 2F", "ko": "개미지옥 2층"}, {"en": "Sograt Desert", "ko": "소그라트 사막"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 45, "en": "Menblatt", "ko": "멘블라트", "hp": 7615, "flee": 82, "def": 24, "mdef": 1, "elem": "땅", "base": 456, "job": 376, "total": 832, "eff": 109.26, "drop": "Butterfly Wing Ears", "card": "땅 속성 몬스터 데미지 +20%", "cardStar": "", "cardType": "Weapon", "maps": [{"en": "Mjolnir Mountains", "ko": "묘르닐 산맥"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 46, "en": "Drainliar", "ko": "드레인리어", "hp": 10856, "flee": 60, "def": 75, "mdef": 41, "elem": "암흑", "base": 673, "job": 274, "total": 947, "eff": 87.23, "drop": "Ribbon [1]", "card": "물 속성 몬스터 데미지 +20%", "cardStar": "", "cardType": "Weapon", "maps": [{"en": "Ant Hell 1F", "ko": "개미지옥 1층"}, {"en": "Ant Hell 2F", "ko": "개미지옥 2층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 47, "en": "Vitata", "ko": "비타타", "hp": 11306, "flee": 40, "def": 0, "mdef": 22, "elem": "땅", "base": 574, "job": 356, "total": 930, "eff": 82.26, "drop": "", "card": "힐 Lv.2 사용 가능", "cardStar": "", "cardType": "Weapon", "maps": [{"en": "Ant Hell 1F", "ko": "개미지옥 1층"}, {"en": "Ant Hell 2F", "ko": "개미지옥 2층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 48, "en": "Giearth", "ko": "기아스", "hp": 11756, "flee": 58, "def": 86, "mdef": 20, "elem": "땅", "base": 600, "job": 365, "total": 965, "eff": 82.09, "drop": "Elven Ears", "card": "수면 저항", "cardStar": "", "cardType": "", "maps": [{"en": "Ant Hell 1F", "ko": "개미지옥 1층"}, {"en": "Ant Hell 2F", "ko": "개미지옥 2층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 49, "en": "Muka", "ko": "무카", "hp": 14891, "flee": 32, "def": 53, "mdef": 17, "elem": "땅", "base": 723, "job": 317, "total": 1040, "eff": 69.84, "drop": "", "card": "HP 회복률 +10", "cardStar": "받는 마법 데미지 -8% / Max SP +200", "cardType": "Accessory", "maps": [{"en": "Morroc", "ko": "모로크"}, {"en": "Sograt Desert", "ko": "소그라트 사막"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 50, "en": "Pecopeco", "ko": "페코페코", "hp": 15651, "flee": 32, "def": 200, "mdef": 14, "elem": "불", "base": 736, "job": 333, "total": 1069, "eff": 68.3, "drop": "Peco Peco Hairband", "card": "Max HP +10%  HP Recovery +10%", "cardStar": "", "cardType": "Armor", "maps": [{"en": "Morroc", "ko": "모로크"}, {"en": "Sograt Desert", "ko": "소그라트 사막"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 51, "en": "Magnolia", "ko": "매그놀리아", "hp": 13513, "flee": 52, "def": 66, "mdef": 34, "elem": "물", "base": 655, "job": 413, "total": 1068, "eff": 79.04, "drop": "Magnolia Hat", "card": "공격 시 5% 확률로 SP 30 회복", "cardStar": "", "cardType": "Weapon", "maps": [{"en": "Morroc", "ko": "모로크"}, {"en": "Sograt Desert", "ko": "소그라트 사막"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 52, "en": "Soldier Skeleton", "ko": "병사 스켈레톤", "hp": 14362, "flee": 44, "def": 212, "mdef": 14, "elem": "언데드", "base": 695, "job": 422, "total": 1117, "eff": 77.77, "drop": "Bandana", "card": "Critical +9", "cardStar": "", "cardType": "Weapon", "maps": [{"en": "Pyramid 1F", "ko": "피라미드 1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 53, "en": "Desert Wolf", "ko": "데저트 울프", "hp": 15210, "flee": 85, "def": 69, "mdef": 15, "elem": "불", "base": 713, "job": 444, "total": 1157, "eff": 76.07, "drop": "Eye Bandage", "card": "소형 몬스터 데미지 +25% / ATK +15", "cardStar": "소형 몬스터 데미지 +25% / ATK +15", "cardType": "Weapon", "maps": [{"en": "Morroc", "ko": "모로크"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 54, "en": "Matyr", "ko": "마티르", "hp": 16058, "flee": 78, "def": 70, "mdef": 47, "elem": "암흑", "base": 888, "job": 373, "total": 1261, "eff": 78.53, "drop": "", "card": "AGI +1  Max HP +5%", "cardStar": "", "cardType": "Footgear", "maps": [{"en": "Ant Hell 1F", "ko": "개미지옥 1층"}, {"en": "Pyramid 1F", "ko": "피라미드 1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 55, "en": "Mummy", "ko": "미라", "hp": 16907, "flee": 56, "def": 231, "mdef": 15, "elem": "언데드", "base": 691, "job": 520, "total": 1211, "eff": 71.63, "drop": "Hot-blooded Headband", "card": "HIT +10", "cardStar": "HIT +25  FLEE +2", "cardType": "Weapon", "maps": [{"en": "Pyramid 1F", "ko": "피라미드 1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 55, "en": "Golem", "ko": "골렘", "hp": 20776, "flee": 40, "def": 231, "mdef": 15, "elem": "무속성", "base": 1177, "job": 237, "total": 1414, "eff": 68.06, "drop": "Stone Heart [1]", "card": "Petrify Resistance +20%", "cardStar": "받는 물리 데미지 -8% / Max HP +500", "cardType": "Weapon", "maps": [{"en": "Morroc", "ko": "모로크"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 55, "en": "Metaller", "ko": "메탈러", "hp": 12471, "flee": 119, "def": 191, "mdef": 177, "elem": "불", "base": 761, "job": 480, "total": 1241, "eff": 99.51, "drop": "", "card": "STR +3  ATK +20  ASPD +2%", "cardStar": "", "cardType": "Weapon", "maps": [{"en": "Border Checkpoint", "ko": "국경 검문소"}, {"en": "Prontera North", "ko": "프론테라 북쪽"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 56, "en": "Elder Willow", "ko": "엘더 윌로우", "hp": 17756, "flee": 40, "def": 180, "mdef": 16, "elem": "불", "base": 794, "job": 492, "total": 1286, "eff": 72.43, "drop": "Laurel Wreath [1]", "card": "INT +3", "cardStar": "INT +4  MATK +10", "cardType": "Headgear", "maps": [{"en": "Payon Forest South", "ko": "페이욘 숲 남쪽"}, {"en": "Payon South", "ko": "페이욘 남쪽"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 57, "en": "Isis", "ko": "이시스", "hp": 22826, "flee": 112, "def": 75, "mdef": 51, "elem": "암흑", "base": 988, "job": 412, "total": 1400, "eff": 61.33, "drop": "Crown of Ancient Queen", "card": "일반 몬스터 피격 데미지 -3% / 암흑 속성 피격 -15%", "cardStar": "가변 시전시간 -5% / 불 속성 ATK +5%", "cardType": "", "maps": [{"en": "Pyramid 1F", "ko": "피라미드 1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 58, "en": "Bigfoot", "ko": "빅풋", "hp": 23851, "flee": 50, "def": 252, "mdef": 40, "elem": "땅", "base": 858, "job": 520, "total": 1378, "eff": 57.78, "drop": "Poo Poo Hat", "card": "곤충형 피격 데미지 -15%", "cardStar": "", "cardType": "", "maps": [{"en": "Payon Forest", "ko": "페이욘 숲"}, {"en": "Payon Forest South", "ko": "페이욘 숲 남쪽"}, {"en": "Payon South", "ko": "페이욘 남쪽"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 59, "en": "Savage", "ko": "세비지", "hp": 24876, "flee": 52, "def": 195, "mdef": 41, "elem": "땅", "base": 993, "job": 473, "total": 1466, "eff": 58.93, "drop": "Angel Glasses", "card": "VIT +3", "cardStar": "", "cardType": "", "maps": [{"en": "Payon Forest", "ko": "페이욘 숲"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 60, "en": "Greatest General", "ko": "그레이티스트 제너럴", "hp": 21150, "flee": 60, "def": 200, "mdef": 17, "elem": "불", "base": 910, "job": 553, "total": 1463, "eff": 69.17, "drop": "Stop Post", "card": "일반 공격 시 3% 확률로 1분간 Final DMG +10%", "cardStar": "", "cardType": "", "maps": [{"en": "Payon Forest", "ko": "페이욘 숲"}, {"en": "Payon Forest South", "ko": "페이욘 숲 남쪽"}, {"en": "Payon South", "ko": "페이욘 남쪽"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 61, "en": "Eggyra", "ko": "애기라", "hp": 20188, "flee": 60, "def": 81, "mdef": 43, "elem": "염", "base": 699, "job": 716, "total": 1415, "eff": 70.09, "drop": "Egg Shell", "card": "INT +2  SP Regen +5", "cardStar": "All Stat +2 / ATK +3% / 일반 공격 시 5% 확률로 2초간 Fear / 물리 스킬 시 15% 확률로 2초간 Fear (쿨 10초)", "cardType": "Shoes", "maps": [{"en": "Payon Cave 1F", "ko": "페이욘 동굴 1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 62, "en": "Horong", "ko": "호롱", "hp": 24165, "flee": 68, "def": 83, "mdef": 59, "elem": "불", "base": 977, "job": 594, "total": 1571, "eff": 65.01, "drop": "Bomb Wick", "card": "사이트 Lv.1 사용 가능", "cardStar": "Max HP +1000 / 사이트 Lv.1 사용 가능 / 메이지 착용 시 사이트 거리 +3m", "cardType": "Accessory", "maps": [{"en": "Payon Cave 2F", "ko": "페이욘 동굴 2층"}, {"en": "Payon Cave 3F", "ko": "페이욘 동굴 3층"}, {"en": "Payon Forest", "ko": "페이욘 숲"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 62, "en": "Dustiness", "ko": "더스티니스", "hp": 18718, "flee": 125, "def": 119, "mdef": 163, "elem": "바람", "base": 950, "job": 609, "total": 1559, "eff": 83.29, "drop": "", "card": "바람 속성 피격 데미지 -15% / FLEE +5", "cardStar": "", "cardType": "", "maps": [{"en": "Border Checkpoint", "ko": "국경 검문소"}, {"en": "Prontera North", "ko": "프론테라 북쪽"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 63, "en": "Munak", "ko": "무낙", "hp": 25672, "flee": 45, "def": 84, "mdef": 45, "elem": "언데드", "base": 1083, "job": 574, "total": 1657, "eff": 64.55, "drop": "Munak Hat [1]", "card": "땅 속성 피격 데미지 -10% / DEF +10", "cardStar": "Ignore DEF +15% Ignore MDEF +15%", "cardType": "Off-Hand", "maps": [{"en": "Payon Cave 1F", "ko": "페이욘 동굴 1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 64, "en": "Minorous", "ko": "마이너러스", "hp": 27181, "flee": 47, "def": 297, "mdef": 17, "elem": "불", "base": 1210, "job": 539, "total": 1749, "eff": 64.35, "drop": "Minorous Horn", "card": "대형 몬스터 데미지 +25% / ATK +15", "cardStar": "", "cardType": "", "maps": [{"en": "Pyramid 2F", "ko": "피라미드 2층"}, {"en": "Pyramid 3F", "ko": "피라미드 3층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 65, "en": "Bongun", "ko": "본건", "hp": 28688, "flee": 47, "def": 88, "mdef": 48, "elem": "언데드", "base": 1113, "job": 636, "total": 1749, "eff": 60.97, "drop": "Bongun Hat [1]", "card": "공격 시 3% 확률로 배시 Lv.5", "cardStar": "", "cardType": "Weapon", "maps": [{"en": "Payon Cave 1F", "ko": "페이욘 동굴 1층"}, {"en": "Payon Cave 2F", "ko": "페이욘 동굴 2층"}, {"en": "Payon Cave 3F", "ko": "페이욘 동굴 3층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 65, "en": "Mantis", "ko": "맨티스", "hp": 26232, "flee": 158, "def": 164, "mdef": 200, "elem": "땅", "base": 1058, "job": 667, "total": 1725, "eff": 65.76, "drop": "", "card": "STR +5", "cardStar": "", "cardType": "", "maps": [{"en": "Border Checkpoint", "ko": "국경 검문소"}, {"en": "Prontera North", "ko": "프론테라 북쪽"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 66, "en": "Skeleton Archer", "ko": "스켈레톤 아처", "hp": 30196, "flee": 20, "def": 89, "mdef": 49, "elem": "언데드", "base": 1134, "job": 665, "total": 1799, "eff": 59.58, "drop": "Apple of Archer", "card": "Melee ATK +5% Ranged ATK +10%", "cardStar": "STR +2  ATK +5%", "cardType": "Weapon", "maps": [{"en": "Pyramid 2F", "ko": "피라미드 2층"}, {"en": "Pyramid 3F", "ko": "피라미드 3층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 67, "en": "Sohee", "ko": "소희", "hp": 31703, "flee": 66, "def": 91, "mdef": 67, "elem": "물", "base": 1139, "job": 701, "total": 1840, "eff": 58.04, "drop": "Decorative Golden Bell", "card": "Max SP +15% SP Regen +2", "cardStar": "", "cardType": "", "maps": [{"en": "Payon Cave 2F", "ko": "페이욘 동굴 2층"}, {"en": "Payon Cave 3F", "ko": "페이욘 동굴 3층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 68, "en": "Marduk", "ko": "마르두크", "hp": 40512, "flee": 80, "def": 242, "mdef": 51, "elem": "불", "base": 1181, "job": 717, "total": 1898, "eff": 46.85, "drop": "Cultish Masque", "card": "침묵 저항", "cardStar": "", "cardType": "Headgear", "maps": [{"en": "Pyramid 2F", "ko": "피라미드 2층"}, {"en": "Pyramid 3F", "ko": "피라미드 3층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 69, "en": "Dokebi", "ko": "도깨비", "hp": 34720, "flee": 83, "def": 340, "mdef": 20, "elem": "암흑", "base": 1320, "job": 676, "total": 1996, "eff": 57.49, "drop": "Dokebi Horn", "card": "갑옷을 바람 속성으로 변경", "cardStar": "크리티컬 저항 +15 / 갑옷 +10 이상 시 크리티컬 저항 +15 추가", "cardType": "Armor", "maps": [{"en": "Payon Cave 2F", "ko": "페이욘 동굴 2층"}, {"en": "Payon Cave 3F", "ko": "페이욘 동굴 3층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 70, "en": "Orc Warrior", "ko": "오크 워리어", "hp": 36238, "flee": 48, "def": 350, "mdef": 21, "elem": "땅", "base": 1524, "job": 597, "total": 2121, "eff": 58.53, "drop": "Cigaratte", "card": "동물형 피격 데미지 -20%", "cardStar": "", "cardType": "Off Hand", "maps": [{"en": "Orc Village", "ko": "오크 마을"}, {"en": "Orc Village South", "ko": "오크 마을 남쪽"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 71, "en": "Orc Archer", "ko": "오크 아처", "hp": 40276, "flee": 93, "def": 98, "mdef": 21, "elem": "땅", "base": 949, "job": 981, "total": 1930, "eff": 47.92, "drop": "Orc Helm", "card": "인간형 대상 스킬 사용 시 10% 확률로 SP 20 회복", "cardStar": "", "cardType": "Accessory", "maps": [{"en": "Orc Village", "ko": "오크 마을"}, {"en": "Orc Village South", "ko": "오크 마을 남쪽"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 72, "en": "Nine Tail", "ko": "나인테일", "hp": 44313, "flee": 131, "def": 99, "mdef": 21, "elem": "불", "base": 1806, "job": 529, "total": 2335, "eff": 52.69, "drop": "Nine Tails", "card": "AGI +2  FLEE +5", "cardStar": "DEX +2  FLEE +5", "cardType": "Garment", "maps": [{"en": "Payon Cave 2F", "ko": "페이욘 동굴 2층"}, {"en": "Payon Cave 3F", "ko": "페이욘 동굴 3층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 72, "en": "Wild Rose", "ko": "와일드 로즈", "hp": 90140, "flee": 123, "def": 121, "mdef": 26, "elem": "바람", "base": 1317, "job": 814, "total": 2131, "eff": 23.64, "drop": "Nut Shell", "card": "AGI +2  FLEE +5", "cardStar": "INT +2  FLEE +5", "cardType": "Shoe", "maps": [{"en": "Kordt Forest", "ko": "코르드 숲"}, {"en": "Kordt Forest Depth", "ko": "코르드 숲 심층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 72, "en": "Kobold (Axe)", "ko": "코볼트 (도끼)", "hp": 75000, "flee": 126, "def": 357, "mdef": 73, "elem": "바람", "base": 1301, "job": 823, "total": 2124, "eff": 28.32, "drop": "Bone in Mouth", "card": "STR +4  CRI +10", "cardStar": "", "cardType": "", "maps": [{"en": "Kordt Forest", "ko": "코르드 숲"}, {"en": "Kordt Forest Depth", "ko": "코르드 숲 심층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 73, "en": "High Orc", "ko": "하이 오크", "hp": 58851, "flee": 98, "def": 272, "mdef": 22, "elem": "불", "base": 1524, "job": 713, "total": 2237, "eff": 38.01, "drop": "Orc Helm", "card": "피격 시 데미지 10% 반사", "cardStar": "", "cardType": "", "maps": [{"en": "Orc Dungeon", "ko": "오크 던전"}, {"en": "Orc Village", "ko": "오크 마을"}, {"en": "Orc Village South", "ko": "오크 마을 남쪽"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 73, "en": "Kobold (Buckler)", "ko": "코볼트 (방패)", "hp": 96900, "flee": 62, "def": 50, "mdef": 150, "elem": "독", "base": 1498, "job": 757, "total": 2255, "eff": 23.27, "drop": "Bone in Mouth", "card": "STR +4  CRI +10", "cardStar": "", "cardType": "", "maps": [{"en": "Kordt Forest", "ko": "코르드 숲"}, {"en": "Kordt Forest Depth", "ko": "코르드 숲 심층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 74, "en": "Nightmare", "ko": "나이트메어", "hp": 38515, "flee": 123, "def": 103, "mdef": 79, "elem": "염", "base": 1059, "job": 1059, "total": 2118, "eff": 54.99, "drop": "Grief of Greed", "card": "수면 저항 / AGI +1", "cardStar": "화이트 배리어 쿨타임 -3초", "cardType": "", "maps": [{"en": "Geffen Dungeon", "ko": "게펜 던전"}, {"en": "Underground Geffen 2F", "ko": "게펜 지하 2층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 74, "en": "Kobold (Hammer)", "ko": "코볼트 (망치)", "hp": 65000, "flee": 165, "def": 100, "mdef": 100, "elem": "불", "base": 1381, "job": 873, "total": 2254, "eff": 34.68, "drop": "Bone in Mouth", "card": "STR +4  CRI +10", "cardStar": "", "cardType": "", "maps": [{"en": "Kordt Forest", "ko": "코르드 숲"}, {"en": "Kordt Forest Depth", "ko": "코르드 숲 심층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 75, "en": "Orc Zombie", "ko": "오크 좀비", "hp": 56426, "flee": 36, "def": 105, "mdef": 23, "elem": "언데드", "base": 1444, "job": 884, "total": 2328, "eff": 41.26, "drop": "Orc Helm", "card": "언데드 속성 피격 데미지 -20%", "cardStar": "Max HP +3000 / 물리 피격 시 10% 확률로 적에게 랜덤 상태이상", "cardType": "", "maps": [{"en": "Orc Dungeon", "ko": "오크 던전"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 75, "en": "Kobold Archer", "ko": "코볼트 아처", "hp": 85000, "flee": 75, "def": 50, "mdef": 28, "elem": "불", "base": 1440, "job": 887, "total": 2327, "eff": 27.38, "drop": "Puppy Headband", "card": "크리티컬 데미지 +10% / 식물 종족 CRI +20", "cardStar": "", "cardType": "", "maps": [{"en": "Kordt Forest", "ko": "코르드 숲"}, {"en": "Kordt Forest Depth", "ko": "코르드 숲 심층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 75, "en": "Myst Case", "ko": "미스트 케이스", "hp": 83035, "flee": 156, "def": 165, "mdef": 42, "elem": "무속성", "base": 1437, "job": 888, "total": 2325, "eff": 28.0, "drop": "Gift Box Helm", "card": "몬스터 처치 시 SP 10 회복 (쿨 5초)", "cardStar": "", "cardType": "", "maps": [{"en": "Toy Factory 1F", "ko": "장난감 공장 1층"}, {"en": "Toy Factory 2F", "ko": "장난감 공장 2층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 76, "en": "Sky Petite", "ko": "스카이 쁘띠", "hp": 84000, "flee": 75, "def": 50, "mdef": 10, "elem": "바람", "base": 1486, "job": 909, "total": 2395, "eff": 28.51, "drop": "Petite's Tail", "card": "드래곤 종족 피격 데미지 -15%", "cardStar": "", "cardType": "", "maps": [{"en": "Glast Heim Outskirt", "ko": "글래스트 헤임 외곽"}, {"en": "Glast Heim Outskirts", "ko": "글래스트 헤임 외곽"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 77, "en": "Marionette", "ko": "마리오네트", "hp": 43050, "flee": 103, "def": 108, "mdef": 23, "elem": "염", "base": 1032, "job": 1221, "total": 2253, "eff": 52.33, "drop": "Stellar", "card": "Mini·MVP 데미지 +3% / 염 속성 피격 데미지 -15%", "cardStar": "염 속성 피격 데미지 -10% / 염 속성 데미지 +5%", "cardType": "", "maps": [{"en": "Geffen Dungeon", "ko": "게펜 던전"}, {"en": "Underground Geffen 2F", "ko": "게펜 지하 2층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 78, "en": "Orc Skeleton", "ko": "오크 스켈레톤", "hp": 68538, "flee": 42, "def": 110, "mdef": 24, "elem": "언데드", "base": 1560, "job": 961, "total": 2521, "eff": 36.78, "drop": "Orc Helm", "card": "성 속성 몬스터 데미지 +20%", "cardStar": "", "cardType": "", "maps": [{"en": "Orc Dungeon", "ko": "오크 던전"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 78, "en": "Cookie", "ko": "쿠키", "hp": 68767, "flee": 143, "def": 48, "mdef": 154, "elem": "무속성", "base": 1607, "job": 934, "total": 2541, "eff": 36.95, "drop": "", "card": "LUK +3", "cardStar": "", "cardType": "", "maps": [{"en": "Toy Factory 1F", "ko": "장난감 공장 1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 79, "en": "Green Petite", "ko": "그린 쁘띠", "hp": 85440, "flee": 88, "def": 65, "mdef": 15, "elem": "땅", "base": 1600, "job": 986, "total": 2586, "eff": 30.27, "drop": "Petite's Tail", "card": "드래곤 종족 데미지 +20%", "cardStar": "", "cardType": "", "maps": [{"en": "Glast Heim Outskirt", "ko": "글래스트 헤임 외곽"}, {"en": "Glast Heim Outskirts", "ko": "글래스트 헤임 외곽"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 79, "en": "Teddy Bear", "ko": "테디베어", "hp": 108290, "flee": 163, "def": 348, "mdef": 75, "elem": "무속성", "base": 1642, "job": 963, "total": 2605, "eff": 24.06, "drop": "Toy Nail [1]", "card": "언데드 종족 피격 데미지 -10%", "cardStar": "", "cardType": "", "maps": [{"en": "Toy Factory 1F", "ko": "장난감 공장 1층"}, {"en": "Toy Factory 2F", "ko": "장난감 공장 2층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 80, "en": "Deviruchi", "ko": "데비루치", "hp": 76621, "flee": 115, "def": 114, "mdef": 92, "elem": "암흑", "base": 1851, "job": 888, "total": 2739, "eff": 35.75, "drop": "Deviruchi Hat", "card": "STR +3 / 암흑 상태 저항", "cardStar": "", "cardType": "", "maps": [{"en": "Geffen Dungeon", "ko": "게펜 던전"}, {"en": "Glast Heim Chivalry", "ko": "글래스트 헤임 기사단"}, {"en": "Underground Geffen 2F", "ko": "게펜 지하 2층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 80, "en": "Succubus", "ko": "서큐버스", "hp": 82450, "flee": 130, "def": 20, "mdef": 60, "elem": "암흑", "base": 1415, "job": 1142, "total": 2557, "eff": 31.01, "drop": "Succubus Horn", "card": "Max HP +500  HP Regen +15%", "cardStar": "", "cardType": "", "maps": [{"en": "Glast Heim", "ko": "글래스트 헤임"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 81, "en": "Hunter Fly", "ko": "헌터 플라이", "hp": 80001, "flee": 147, "def": 327, "mdef": 68, "elem": "바람", "base": 1672, "job": 1050, "total": 2722, "eff": 34.02, "drop": "Gemmed Sallet [1]", "card": "물리 공격 시 3% 확률로 HP 2% 회복", "cardStar": "", "cardType": "", "maps": [{"en": "Orc Dungeon", "ko": "오크 던전"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 81, "en": "Incubus", "ko": "인큐버스", "hp": 95000, "flee": 90, "def": 25, "mdef": 100, "elem": "암흑", "base": 1461, "job": 1171, "total": 2632, "eff": 27.71, "drop": "Incubus Horn", "card": "Max SP +200  SP Regen +15%", "cardStar": "", "cardType": "", "maps": [{"en": "Glast Heim", "ko": "글래스트 헤임"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 81, "en": "Raydric Archer", "ko": "레이드릭 아처", "hp": 75954, "flee": 77, "def": 146, "mdef": 27, "elem": "암흑", "base": 1574, "job": 1106, "total": 2680, "eff": 35.28, "drop": "Horong", "card": "곤충 처치 스킬 시 10% 확률로 Refine Atk 중첩 (최대 3중첩)", "cardStar": "", "cardType": "", "maps": [{"en": "Glast Heim Chivalry", "ko": "글래스트 헤임 기사단"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 81, "en": "Cruiser", "ko": "크루저", "hp": 75036, "flee": 144, "def": 183, "mdef": 23, "elem": "무속성", "base": 2041, "job": 834, "total": 2875, "eff": 38.31, "drop": "Legionnaire Hat [1]", "card": "크리티컬 데미지 +7% / 동물형 CRI +10", "cardStar": "", "cardType": "", "maps": [{"en": "Toy Factory 1F", "ko": "장난감 공장 1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 82, "en": "Ferus", "ko": "페루스", "hp": 94000, "flee": 135, "def": 0, "mdef": 30, "elem": "땅", "base": 2279, "job": 753, "total": 3032, "eff": 32.26, "drop": "Skeleton Helm [1]", "card": "VIT +2  Max HP +10%", "cardStar": "", "cardType": "", "maps": [{"en": "Glast Heim Outskirt", "ko": "글래스트 헤임 외곽"}, {"en": "Glast Heim Outskirts", "ko": "글래스트 헤임 외곽"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 82, "en": "Sting", "ko": "스팅", "hp": 65000, "flee": 106, "def": 125, "mdef": 20, "elem": "땅", "base": 1586, "job": 1155, "total": 2741, "eff": 42.17, "drop": "Sting Hat", "card": "PDMG/MDMG Reduction 2% DEF +10  MDEF +15", "cardStar": "DEF +10%  MDEF +10%", "cardType": "", "maps": [{"en": "Glast Heim Culvert", "ko": "글래스트 헤임 지하수로"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 83, "en": "Wraith", "ko": "레이스", "hp": 86000, "flee": 141, "def": 350, "mdef": 0, "elem": "언데드", "base": 1973, "job": 986, "total": 2959, "eff": 34.41, "drop": "Wedding Veil", "card": "언데드 처치 스킬 시 3% 확률로 가한 피해의 9% HP 회복", "cardStar": "All Stat +1 / 공격 시 스턴·동결 확률 및 지속시간 +25%", "cardType": "", "maps": [{"en": "Glast Heim Churchyard", "ko": "글래스트 헤임 묘지"}, {"en": "Glast Heim Churchyard 2F", "ko": "글래스트 헤임 묘지 2층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 83, "en": "Rideword", "ko": "라이드워드", "hp": 80413, "flee": 134, "def": 152, "mdef": 78, "elem": "무속성", "base": 1001, "job": 1551, "total": 2552, "eff": 31.74, "drop": "Observer", "card": "INT +5  MDEF +20", "cardStar": "", "cardType": "", "maps": [{"en": "Glast Heim Hall", "ko": "글래스트 헤임 홀"}, {"en": "Glast Heim Wing", "ko": "글래스트 헤임 날개"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 83, "en": "Cramp", "ko": "크램프", "hp": 74000, "flee": 141, "def": 50, "mdef": 5, "elem": "독", "base": 1722, "job": 1132, "total": 2854, "eff": 38.57, "drop": "", "card": "LUK +3  FLEE +5", "cardStar": "", "cardType": "", "maps": [{"en": "Glast Heim Culvert", "ko": "글래스트 헤임 지하수로"}, {"en": "Glast Heim Hall", "ko": "글래스트 헤임 홀"}, {"en": "Glast Heim Wing", "ko": "글래스트 헤임 날개"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 83, "en": "Zipper Bear", "ko": "지퍼 베어", "hp": 79998, "flee": 162, "def": 379, "mdef": 24, "elem": "암흑", "base": 1835, "job": 1066, "total": 2901, "eff": 36.26, "drop": "Honey Jar", "card": "PATK +25", "cardStar": "HIT +10 ATK/MATK +3%", "cardType": "", "maps": [{"en": "Toy Factory 1F", "ko": "장난감 공장 1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 84, "en": "Anolian", "ko": "아놀리안", "hp": 97200, "flee": 220, "def": 0, "mdef": 5, "elem": "물", "base": 1811, "job": 1137, "total": 2948, "eff": 30.33, "drop": "Sunday Hat", "card": "피격 시 3% 확률로 2분간 AGI +5, DEX +5", "cardStar": "", "cardType": "", "maps": [{"en": "Glast Heim Culvert", "ko": "글래스트 헤임 지하수로"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 85, "en": "Injustice", "ko": "인저스티스", "hp": 82000, "flee": 93, "def": 75, "mdef": 5, "elem": "암흑", "base": 1749, "job": 1229, "total": 2978, "eff": 36.32, "drop": "Nut on Head", "card": "공격 시 3% 확률로 소닉 블로우 Lv.5", "cardStar": "", "cardType": "", "maps": [{"en": "Glast Heim Culvert", "ko": "글래스트 헤임 지하수로"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 86, "en": "Gargoyle", "ko": "가고일", "hp": 78000, "flee": 93, "def": 0, "mdef": 50, "elem": "바람", "base": 1455, "job": 1455, "total": 2910, "eff": 37.31, "drop": "Indifferent Solo Hat [1]", "card": "곤충 처치 스킬 시 3% 확률로 20초간 이동속도 +25%", "cardStar": "", "cardType": "", "maps": [{"en": "Glast Heim Churchyard", "ko": "글래스트 헤임 묘지"}, {"en": "Glast Heim Churchyard 2F", "ko": "글래스트 헤임 묘지 2층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 87, "en": "Raydric", "ko": "레이드릭", "hp": 96685, "flee": 99, "def": 167, "mdef": 85, "elem": "암흑", "base": 2129, "job": 1120, "total": 3249, "eff": 33.6, "drop": "Iron Cain", "card": "무속성 피격 데미지 -10%", "cardStar": "무속성 피격 데미지 -8% / 무속성 데미지 +8%", "cardType": "", "maps": [{"en": "Glast Heim Chivalry", "ko": "글래스트 헤임 기사단"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 87, "en": "Christmas Cookie", "ko": "크리스마스 쿠키", "hp": 67032, "flee": 145, "def": 43, "mdef": 281, "elem": "성", "base": 1969, "job": 1213, "total": 3182, "eff": 47.47, "drop": "Pinocchio's Nose", "card": "LUK +2 / 주덱스 스킬 데미지 +5%", "cardStar": "", "cardType": "", "maps": [{"en": "Toy Factory 2F", "ko": "장난감 공장 2층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 88, "en": "Baphomet JR.", "ko": "바포메트 주니어", "hp": 83056, "flee": 125, "def": 170, "mdef": 86, "elem": "암흑", "base": 2140, "job": 1170, "total": 3310, "eff": 39.85, "drop": "Dooping Baphomet Jr.", "card": "AGI +2  CRI +5", "cardStar": "", "cardType": "", "maps": [{"en": "Glast Heim Hall", "ko": "글래스트 헤임 홀"}, {"en": "Glast Heim Wing", "ko": "글래스트 헤임 날개"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 88, "en": "Evil Druid", "ko": "이블 드루이드", "hp": 85200, "flee": 106, "def": 0, "mdef": 400, "elem": "언데드", "base": 1570, "job": 1501, "total": 3071, "eff": 36.04, "drop": "Evil Marcher Hat [1]", "card": "갑옷을 언데드 속성으로 변경 / INT +4", "cardStar": "INT +5 / 성 속성 데미지 +5% / Healing Bonus +5%", "cardType": "", "maps": [{"en": "Glast Heim Churchyard", "ko": "글래스트 헤임 묘지"}, {"en": "Glast Heim Churchyard 2F", "ko": "글래스트 헤임 묘지 2층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 88, "en": "Punk", "ko": "펑크", "hp": 95038, "flee": 119, "def": 124, "mdef": 449, "elem": "바람", "base": 2029, "job": 1235, "total": 3264, "eff": 34.34, "drop": "", "card": "Max HP +200 Max SP +50", "cardStar": "", "cardType": "", "maps": [{"en": "Clock Tower 1F", "ko": "시계탑 1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 90, "en": "Dark Priest", "ko": "다크 프리스트", "hp": 90000, "flee": 104, "def": 0, "mdef": 400, "elem": "언데드", "base": 1994, "job": 1367, "total": 3361, "eff": 37.34, "drop": "Hockey Mask", "card": "공격 시 대상 SP 감소 확률", "cardStar": "", "cardType": "", "maps": [{"en": "Glast Heim Churchyard", "ko": "글래스트 헤임 묘지"}, {"en": "Glast Heim Churchyard 2F", "ko": "글래스트 헤임 묘지 2층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 90, "en": "Black Witch", "ko": "블랙 위치", "hp": 104478, "flee": 172, "def": 120, "mdef": 284, "elem": "언데드", "base": 2173, "job": 1264, "total": 3437, "eff": 32.9, "drop": "", "card": "INT +1  MATK +10", "cardStar": "MATK +20  VIT +2  INT +2", "cardType": "", "maps": [{"en": "Clock Tower 1F", "ko": "시계탑 1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 90, "en": "Wind Ghost", "ko": "윈드 고스트", "hp": 89844, "flee": 140, "def": 178, "mdef": 90, "elem": "바람", "base": 2114, "job": 1298, "total": 3412, "eff": 37.98, "drop": "Magic Eyes", "card": "공격 시 5% 확률로 주피터 썬더 Lv.5", "cardStar": "", "cardType": "", "maps": [{"en": "Glast Heim Chivalry", "ko": "글래스트 헤임 기사단"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 91, "en": "Joker", "ko": "조커", "hp": 113193, "flee": 200, "def": 182, "mdef": 92, "elem": "바람", "base": 2126, "job": 1355, "total": 3481, "eff": 30.75, "drop": "Joker Jester", "card": "스톤 커스 Lv.5 사용 가능", "cardStar": "", "cardType": "", "maps": [{"en": "Glast Heim Hall", "ko": "글래스트 헤임 홀"}, {"en": "Glast Heim Wing", "ko": "글래스트 헤임 날개"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 91, "en": "Alarm", "ko": "알람", "hp": 122288, "flee": 177, "def": 210, "mdef": 158, "elem": "무속성", "base": 2236, "job": 1290, "total": 3526, "eff": 28.83, "drop": "", "card": "Max HP +300  VIT +1  INT +1", "cardStar": "", "cardType": "", "maps": [{"en": "Clock Tower 2F", "ko": "시계탑 2층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 91, "en": "Carat", "ko": "캐럿", "hp": 100158, "flee": 161, "def": 25, "mdef": 84, "elem": "바람", "base": 2018, "job": 1418, "total": 3436, "eff": 34.31, "drop": "", "card": "INT +2  Max SP +80", "cardStar": "", "cardType": "", "maps": [{"en": "Toy Factory 2F", "ko": "장난감 공장 2층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 92, "en": "Ancient Clock", "ko": "고대의 시계", "hp": 125127, "flee": 178, "def": 262, "mdef": 134, "elem": "땅", "base": 1853, "job": 1578, "total": 3431, "eff": 27.42, "drop": "", "card": "STR +2  INT +1 Max HP +1%", "cardStar": "", "cardType": "", "maps": [{"en": "Clock Tower 1F", "ko": "시계탑 1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 93, "en": "Khalitzburg", "ko": "칼리츠버그", "hp": 80154, "flee": 128, "def": 191, "mdef": 96, "elem": "언데드", "base": 2248, "job": 1413, "total": 3661, "eff": 45.67, "drop": "Bone Helm", "card": "악마형 피격 데미지 -10%", "cardStar": "", "cardType": "", "maps": [{"en": "Glast Heim Chivalry", "ko": "글래스트 헤임 기사단"}, {"en": "Glast Heim Hall", "ko": "글래스트 헤임 홀"}, {"en": "Glast Heim Wing", "ko": "글래스트 헤임 날개"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 93, "en": "Bathory", "ko": "바소리", "hp": 102314, "flee": 175, "def": 120, "mdef": 355, "elem": "암흑", "base": 2735, "job": 1130, "total": 3865, "eff": 37.78, "drop": "", "card": "갑옷을 암흑 속성으로 변경", "cardStar": "", "cardType": "", "maps": [{"en": "Clock Tower 1F", "ko": "시계탑 1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 94, "en": "Wanderer", "ko": "원더러", "hp": 106820, "flee": 266, "def": 195, "mdef": 98, "elem": "바람", "base": 1989, "job": 1627, "total": 3616, "eff": 33.85, "drop": "Katana", "card": "공격 시 5% 확률로 헤비 애로우 Lv.5", "cardStar": "", "cardType": "", "maps": [{"en": "Glast Heim Hall", "ko": "글래스트 헤임 홀"}, {"en": "Glast Heim Wing", "ko": "글래스트 헤임 날개"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 94, "en": "Elder", "ko": "엘더", "hp": 119148, "flee": 184, "def": 377, "mdef": 333, "elem": "무속성", "base": 2350, "job": 1417, "total": 3767, "eff": 31.62, "drop": "", "card": "PVP·GVG 플레이어 데미지 +3%", "cardStar": "", "cardType": "", "maps": [{"en": "Clock Tower 2F", "ko": "시계탑 2층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 95, "en": "Metal Poring", "ko": "메탈 포링", "hp": 127422, "flee": 122, "def": 253, "mdef": 128, "elem": "무속성", "base": 2558, "job": 1360, "total": 3918, "eff": 30.75, "drop": "Metal Mask", "card": "ATK +20 / 물리 공격 시 5% 확률로 스트립 악세서리 Lv.1", "cardStar": "", "cardType": "", "maps": [{"en": "Prontera South Gate", "ko": "프론테라 남문"}, {"en": "Labyrinth Forest", "ko": "미궁의 숲"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 95, "en": "Penomena", "ko": "페노메나", "hp": 119146, "flee": 138, "def": 166, "mdef": 232, "elem": "물", "base": 2112, "job": 1620, "total": 3732, "eff": 31.32, "drop": "", "card": "무형 피격 데미지 -10%", "cardStar": "", "cardType": "", "maps": [{"en": "Clock Tower B1", "ko": "시계탑 지하1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 96, "en": "Brilight", "ko": "브리라이트", "hp": 115336, "flee": 164, "def": 583, "mdef": 436, "elem": "불", "base": 2223, "job": 1620, "total": 3843, "eff": 33.32, "drop": "", "card": "STR +3  VIT +1  Max HP +100", "cardStar": "", "cardType": "", "maps": [{"en": "Clock Tower B1", "ko": "시계탑 지하1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 97, "en": "Hurricane Demon", "ko": "허리케인 데몬", "hp": 136544, "flee": 126, "def": 257, "mdef": 130, "elem": "바람", "base": 2435, "job": 1560, "total": 3995, "eff": 29.26, "drop": "Leaf on Head [1]", "card": "ATK +20 / 공격 시 5% 확률로 3초간 출혈", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 97, "en": "Stem Worm", "ko": "스템 웜", "hp": 114692, "flee": 173, "def": 192, "mdef": 147, "elem": "바람", "base": 2423, "job": 1567, "total": 3990, "eff": 34.79, "drop": "", "card": "소닉 블로우 쿨타임 -0.3초", "cardStar": "", "cardType": "", "maps": [{"en": "Clock Tower B1", "ko": "시계탑 지하1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 99, "en": "Orc Lady", "ko": "오크 레이디", "hp": 125140, "flee": 167, "def": 339, "mdef": 159, "elem": "땅", "base": 2558, "job": 1617, "total": 4175, "eff": 33.36, "drop": "", "card": "곤충형 데미지 +5%", "cardStar": "", "cardType": "", "maps": [{"en": "Clock Tower B1", "ko": "시계탑 지하1층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 99, "en": "Martin Scavenger", "ko": "마틴 스캐빈저", "hp": 145437, "flee": 130, "def": 157, "mdef": 221, "elem": "땅", "base": 2573, "job": 1609, "total": 4182, "eff": 28.75, "drop": "Laser Glasses", "card": "스톰 거스트 스킬 데미지 +5%", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 101, "en": "Fire Protec Magic", "ko": "파이어 프로텍 매직", "hp": 154564, "flee": 135, "def": 255, "mdef": 129, "elem": "언데드", "base": 2689, "job": 1629, "total": 4318, "eff": 27.94, "drop": "Fireman's Cap [1]", "card": "Max HP +200  DEX +2  VIT +2", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 103, "en": "Mechanical Hound", "ko": "메커니컬 하운드", "hp": 167214, "flee": 140, "def": 259, "mdef": 131, "elem": "무속성", "base": 2851, "job": 1584, "total": 4435, "eff": 26.52, "drop": "Mechanical Tail", "card": "암 캐논 +5% / 무기 +10 이상 시 암 캐논 추가 +5%", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 105, "en": "Variant Deposit", "ko": "배리언트 디포짓", "hp": 180419, "flee": 144, "def": 158, "mdef": 223, "elem": "암흑", "base": 2828, "job": 1644, "total": 4472, "eff": 24.79, "drop": "Syringe Back Headwear", "card": "Max HP +100  Max SP +100", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 106, "en": "Martin (Marmot)", "ko": "마틴 (마멋)", "hp": 207714, "flee": 215, "def": 461, "mdef": 228, "elem": "땅", "base": 2708, "job": 1738, "total": 4446, "eff": 21.4, "drop": "Martin Hat [1]", "card": "DEF +10 / 암흑 속성 몬스터 데미지 +10%", "cardStar": "", "cardType": "", "maps": [{"en": "Einbroch Field", "ko": "아인브로크 필드"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 106, "en": "Dark Swordsman", "ko": "다크 소드맨", "hp": 187066, "flee": 146, "def": 292, "mdef": 128, "elem": "불", "base": 2849, "job": 1657, "total": 4506, "eff": 24.09, "drop": "Swordsman Mask", "card": "STR 10당 INT +1", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 107, "en": "Dark Acolyte", "ko": "다크 어콜라이트", "hp": 194334, "flee": 149, "def": 160, "mdef": 238, "elem": "성", "base": 3012, "job": 1585, "total": 4597, "eff": 23.66, "drop": "Acolyte Silver Ring [1]", "card": "원거리 피격 시 5% 확률로 라이트 실드 Lv.1", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 108, "en": "Geographer", "ko": "지오그래퍼", "hp": 215744, "flee": 217, "def": 234, "mdef": 464, "elem": "땅", "base": 2550, "job": 1878, "total": 4428, "eff": 20.52, "drop": "Sunflower Lillipop", "card": "어콜라이트 계열: 악마·언데드 피격 데미지 -20%", "cardStar": "", "cardType": "", "maps": [{"en": "Border Checkpoint", "ko": "국경 검문소"}, {"en": "Einbroch Field", "ko": "아인브로크 필드"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 108, "en": "Dark Mage", "ko": "다크 메이지", "hp": 218042, "flee": 150, "def": 151, "mdef": 247, "elem": "염", "base": 3109, "job": 1553, "total": 4662, "eff": 21.38, "drop": "Mage's Garland [1]", "card": "MATK +20 / 오토스펠 확률 +3%", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 109, "en": "Harpy", "ko": "하피", "hp": 219815, "flee": 218, "def": 473, "mdef": 156, "elem": "바람", "base": 2911, "job": 1693, "total": 4604, "eff": 20.94, "drop": "Wagtail Crest [1]", "card": "무속성 피격 데미지 -8% / 소울 익스팬션 +10%", "cardStar": "INT +2 / MATK +20 / INT 6당 MATK +0.1%", "cardType": "", "maps": [{"en": "Border Checkpoint", "ko": "국경 검문소"}, {"en": "Einbroch Field", "ko": "아인브로크 필드"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 109, "en": "Fiery Deviruchi", "ko": "불타는 데비루치", "hp": 219815, "flee": 218, "def": 315, "mdef": 468, "elem": "암흑", "base": 2911, "job": 1693, "total": 4604, "eff": 20.94, "drop": "Portable Deviruchi", "card": "VIT +3 / 화상 저항", "cardStar": "", "cardType": "", "maps": [{"en": "Magma Dungeon 1F", "ko": "마그마 던전 1층"}, {"en": "Magma Dungeon 3F", "ko": "마그마 던전 3층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 109, "en": "Dark Merchant", "ko": "다크 머천트", "hp": 237636, "flee": 152, "def": 294, "mdef": 135, "elem": "땅", "base": 2769, "job": 1776, "total": 4545, "eff": 19.13, "drop": "Merchant's Hat [1]", "card": "애시드 테러·데모·개선 애시드 데모 장비파괴 확률 +5%", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 110, "en": "Fiery Mane", "ko": "불타는 갈기", "hp": 226187, "flee": 219, "def": 477, "mdef": 315, "elem": "언데드", "base": 2932, "job": 1704, "total": 4636, "eff": 20.5, "drop": "Zealous Rhino", "card": "Movement Speed +3%  AGI +2 FLEE +10", "cardStar": "공격 시 50% 확률로 대상 ASPD -15%, 이동속도 -30%", "cardType": "", "maps": [{"en": "Magma Dungeon 1F", "ko": "마그마 던전 1층"}, {"en": "Magma Dungeon 2F", "ko": "마그마 던전 2층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 110, "en": "Dark Archer", "ko": "다크 아처", "hp": 243094, "flee": 154, "def": 265, "mdef": 128, "elem": "바람", "base": 2923, "job": 1704, "total": 4627, "eff": 19.03, "drop": "Archer Hat [1]", "card": "불 속성 피격 데미지 -10% / 애로우 샤워·레이징 스톰 +10%", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 110, "en": "Quve", "ko": "쿠베", "hp": 277800, "flee": 254, "def": 636, "mdef": 323, "elem": "언데드", "base": 2581, "job": 1908, "total": 4489, "eff": 16.16, "drop": "Quve Mask", "card": "MDEF +2%  MDEF +15", "cardStar": "", "cardType": "", "maps": [{"en": "The Misty Forest", "ko": "안개의 숲"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 111, "en": "Hylozoist", "ko": "하일로조이스트", "hp": 283080, "flee": 256, "def": 384, "mdef": 543, "elem": "암흑", "base": 3007, "job": 1684, "total": 4691, "eff": 16.57, "drop": "Cursed Bunny Doll [1]", "card": "받는 물리 데미지 -2% / Max HP +100", "cardStar": "", "cardType": "", "maps": [{"en": "Hamelin", "ko": "하멜른"}, {"en": "Skellington", "ko": "스켈링턴"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 111, "en": "Highland Parasite", "ko": "하이랜드 파라사이트", "hp": 230352, "flee": 220, "def": 160, "mdef": 476, "elem": "바람", "base": 2953, "job": 1716, "total": 4669, "eff": 20.27, "drop": "Highland Flower Hairpin [1]", "card": "소울 브레이커 딜레이 -0.5초", "cardStar": "", "cardType": "", "maps": [{"en": "Border Checkpoint", "ko": "국경 검문소"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 112, "en": "Fire Elf", "ko": "파이어 엘프", "hp": 234555, "flee": 221, "def": 485, "mdef": 160, "elem": "불", "base": 2973, "job": 1729, "total": 4702, "eff": 20.05, "drop": "Burning Eyes", "card": "불 속성 피격 데미지 -10% / 드래곤 브레스 +10%", "cardStar": "", "cardType": "", "maps": [{"en": "Magma Dungeon 2F", "ko": "마그마 던전 2층"}, {"en": "Magma Dungeon 3F", "ko": "마그마 던전 3층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 112, "en": "Gibbet", "ko": "지벳", "hp": 288360, "flee": 258, "def": 711, "mdef": 328, "elem": "암흑", "base": 3336, "job": 1517, "total": 4853, "eff": 16.83, "drop": "Gibbet [1]", "card": "Max HP +200  MDEF +10%", "cardStar": "", "cardType": "", "maps": [{"en": "Skellington", "ko": "스켈링턴"}, {"en": "The Misty Forest", "ko": "안개의 숲"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 112, "en": "Dark Thief", "ko": "다크 시프", "hp": 258976, "flee": 160, "def": 254, "mdef": 122, "elem": "독", "base": 3136, "job": 1633, "total": 4769, "eff": 18.41, "drop": "Thief Mask", "card": "불 속성 피격 데미지 -5% / 크로스 임팩트 +15%", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 113, "en": "Dullahan", "ko": "둘라한", "hp": 293760, "flee": 260, "def": 716, "mdef": 331, "elem": "언데드", "base": 2813, "job": 1846, "total": 4659, "eff": 15.86, "drop": "Helm of Dullahan [1]", "card": "불 속성 피격 데미지 -5% / 오버브랜드 +10%", "cardStar": "", "cardType": "", "maps": [{"en": "Hamelin", "ko": "하멜른"}, {"en": "The Misty Forest", "ko": "안개의 숲"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 114, "en": "Fire Fledgling", "ko": "불타는 새끼새", "hp": 245412, "flee": 223, "def": 493, "mdef": 162, "elem": "불", "base": 3015, "job": 1752, "total": 4767, "eff": 19.42, "drop": "Whimpering Fire Bird", "card": "개선 애시드 데모·파이어 익스팬션 보틀 그레네이드 소모 -1", "cardStar": "", "cardType": "", "maps": [{"en": "Magma Dungeon 1F", "ko": "마그마 던전 1층"}, {"en": "Magma Dungeon 3F", "ko": "마그마 던전 3층"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 114, "en": "Lantern Fisherman", "ko": "랜턴 피셔맨", "hp": 293628, "flee": 175, "def": 470, "mdef": 238, "elem": "물", "base": 2961, "job": 1784, "total": 4745, "eff": 16.16, "drop": "Fish Spirit Light [1]", "card": "Max HP +200 / 원거리 피격 데미지 -3%", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 115, "en": "Lude", "ko": "루드", "hp": 304560, "flee": 264, "def": 396, "mdef": 560, "elem": "언데드", "base": 2914, "job": 1835, "total": 4749, "eff": 15.59, "drop": "Halloween Lantern [1]", "card": "언데드 속성 피격 데미지 -5% / 언데드 몬스터 데미지 +10%", "cardStar": "받는 마법 데미지 -20% / 방패 +12 시 추가 -5%", "cardType": "", "maps": [{"en": "Hamelin", "ko": "하멜른"}, {"en": "Skellington", "ko": "스켈링턴"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 116, "en": "Tomb Zombie", "ko": "툼 좀비", "hp": 313200, "flee": 266, "def": 667, "mdef": 339, "elem": "독", "base": 3056, "job": 1777, "total": 4833, "eff": 15.43, "drop": "Necromancy Candle [1]", "card": "DEF +2%  MDEF +2% DEF +10  MDEF +10", "cardStar": "", "cardType": "", "maps": [{"en": "The Misty Forest", "ko": "안개의 숲"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 116, "en": "Demon Print The Paper", "ko": "악마인쇄 종이", "hp": 309984, "flee": 179, "def": 292, "mdef": 412, "elem": "염", "base": 3060, "job": 1774, "total": 4834, "eff": 15.59, "drop": "Demon Print Face Mask", "card": "AGI +5  STR +5 Movement Speed +5% ASPD +5%  CRI.DMG +5%", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 118, "en": "Scarecrow", "ko": "허수아비", "hp": 324360, "flee": 269, "def": 406, "mdef": 573, "elem": "땅", "base": 3098, "job": 1800, "total": 4898, "eff": 15.1, "drop": "Raven Headwear [1]", "card": "언데드 몬스터 데미지 +10%", "cardStar": "Max HP +3%  Healing Bonus +5%", "cardType": "", "maps": [{"en": "Skellington", "ko": "스켈링턴"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 118, "en": "Panda Poring", "ko": "팬더 포링", "hp": 326399, "flee": 182, "def": 503, "mdef": 255, "elem": "무속성", "base": 3267, "job": 1702, "total": 4969, "eff": 15.22, "drop": "Panda Whisper [1]", "card": "ATK +5 / 땅 속성 몬스터 데미지 +10% / 동물·식물 HIT +15", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 120, "en": "Fishman", "ko": "피시맨", "hp": 342985, "flee": 185, "def": 286, "mdef": 403, "elem": "물", "base": 2893, "job": 1967, "total": 4860, "eff": 14.17, "drop": "Deep Sea Touch [1]", "card": "받는 데미지 -5% / 동결 저항 +10%", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 121, "en": "Hodremlin", "ko": "호드렘린", "hp": 362030, "flee": 280, "def": 905, "mdef": 459, "elem": "암흑", "base": 3045, "job": 1904, "total": 4949, "eff": 13.67, "drop": "Monster Horn [1]", "card": "Max HP +100 Max SP +100", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 122, "en": "Stone Poring (Stapo)", "ko": "스톤 포링", "hp": 368487, "flee": 282, "def": 1003, "mdef": 555, "elem": "땅", "base": 2965, "job": 1974, "total": 4939, "eff": 13.4, "drop": "Stapo Hat [1]", "card": "MDEF +30 / 석화 저항 +15%", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 122, "en": "Water Snake", "ko": "물뱀", "hp": 361015, "flee": 189, "def": 493, "mdef": 250, "elem": "독", "base": 3045, "job": 1927, "total": 4972, "eff": 13.77, "drop": "Enchanting Kiss", "card": "ATK +15 / 공격 시 5% 확률로 10초간 독", "cardStar": "", "cardType": "", "maps": [{"en": "Ghost Ship", "ko": "유령선"}, {"en": "Payon Cave 1F", "ko": "페이욘 동굴 1층"}, {"en": "Sunken Ship", "ko": "침몰선"}, {"en": "Underwater Cave", "ko": "해저 동굴"}, {"en": "Underwater Temple", "ko": "해저 신전"}], "mapsNote": "원작 라그M DB 기준 (클래식과 일부 다를 수 있음)"}, {"lv": 123, "en": "Small Siroma", "ko": "작은 시로마", "hp": 375150, "flee": 284, "def": 918, "mdef": 512, "elem": "물", "base": 3520, "job": 1676, "total": 5196, "eff": 13.85, "drop": "Snowball", "card": "콜드 볼트 고정시전 -0.2초 / 콜드 볼트 데미지 +10%", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 124, "en": "Red-tailed Obeaune", "ko": "빨간꼬리 오베아운", "hp": 387094, "flee": 192, "def": 306, "mdef": 431, "elem": "물", "base": 2809, "job": 2112, "total": 4921, "eff": 12.71, "drop": "Sea Vow", "card": "Max HP +200 / 피격 시 15% 확률로 대상 3초간 수면", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 124, "en": "Man-eating Grass", "ko": "식인 풀", "hp": 385605, "flee": 286, "def": 610, "mdef": 940, "elem": "땅", "base": 3202, "job": 1883, "total": 5085, "eff": 13.19, "drop": "Cannibal Bud", "card": "받는 힐 +5% / 물리 공격 시 10% 확률로 힐 Lv.10", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 125, "en": "Siroma", "ko": "시로마", "hp": 392370, "flee": 288, "def": 932, "mdef": 520, "elem": "물", "base": 2955, "job": 2052, "total": 5007, "eff": 12.76, "drop": "Snowball Bag", "card": "물 속성 몬스터 데미지 +15% / 물 속성 피격 데미지 -5%", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 126, "en": "Roween", "ko": "로윈", "hp": 399135, "flee": 290, "def": 939, "mdef": 476, "elem": "바람", "base": 2831, "job": 2148, "total": 4979, "eff": 12.47, "drop": "Dai Dai Ferret", "card": "FLEE +10 / 물 속성 몬스터 데미지 +10% / 어패류 CRI +20", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 127, "en": "Marin", "ko": "마린", "hp": 406002, "flee": 292, "def": 567, "mdef": 881, "elem": "물", "base": 3284, "job": 1909, "total": 5193, "eff": 12.79, "drop": "Marin Hat", "card": "VIT +5 / 동결 저항 +10%", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 128, "en": "Devil's Eye", "ko": "악마의 눈", "hp": 412972, "flee": 294, "def": 571, "mdef": 807, "elem": "바람", "base": 2795, "job": 2217, "total": 5012, "eff": 12.14, "drop": "데비루치 왕관, 거대 눈", "card": "Max HP +200 Max SP +2%", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}, {"lv": 130, "en": "Red Devil's Eye", "ko": "빨간 악마의 눈", "hp": 426912, "flee": 297, "def": 580, "mdef": 818, "elem": "바람", "base": 2544, "job": 2314, "total": 4858, "eff": 11.38, "drop": "Red Wings Mirror", "card": "암흑 속성 몬스터 데미지 +20%", "cardStar": "", "cardType": "", "maps": [], "mapsNote": "위치 미확인 — 인게임 도감/월드맵에서 확인"}];
+
+  let mode = "balance";
+
+  function score(m, mode) {
+    if (mode === "base") {
+      // Base 경험치 + 약간의 효율 (잘 죽는 몹 가산)
+      return m.base * 2.2 + m.eff * 2 + (m.base / Math.max(m.job, 1)) * 50
+    }
+    if (mode === "job") {
+      return m.job * 2.2 + m.eff * 2 + (m.job / Math.max(m.base, 1)) * 50
+    }
+    // 균형: 효율(시간당)을 더 중요하게, Total도 함께 반영
+    return m.eff * 8 + m.total * 0.15
+  }
+
+  function whyText(m, mode, rank) {
+    const bj = (m.base / Math.max(m.job, 1)).toFixed(2);
+    const jb = (m.job / Math.max(m.base, 1)).toFixed(2);
+    if (mode === "base") {
+      return `Base ${m.base.toLocaleString()} 위주 (Base/Job 비율 ${bj}). 효율 ${m.eff}.`;
+    }
+    if (mode === "job") {
+      return `Job ${m.job.toLocaleString()} 위주 (Job/Base 비율 ${jb}). 효율 ${m.eff}.`;
+    }
+    return `Total ${m.total.toLocaleString()} + 효율 ${m.eff}로 균형 추천 ${rank}순위.`;
+  }
+
+  function getLevel() {
+    const v = document.getElementById("level").value.trim();
+    if (!v) return null;
+    const n = Number(v);
+    if (!Number.isFinite(n) || n < 1) return null;
+    return Math.floor(n);
+  }
+
+  function candidates(level) {
+    if (level == null) return [...MONSTERS].sort((a, b) => a.lv - b.lv || b.total - a.total);
+    const lo = level;
+    const hi = level + 30;
+    return MONSTERS
+      .filter((m) => m.lv >= lo && m.lv <= hi)
+      .sort((a, b) => score(b, mode) - score(a, mode) || b.total - a.total);
+  }
+
+  function render() {
+    const level = getLevel();
+    const list = candidates(level);
+    const top = level == null ? [] : list.slice(0, 3);
+    const hint = document.getElementById("hint");
+    const recoTitle = document.getElementById("recoTitle");
+    const listTitle = document.getElementById("listTitle");
+    const cards = document.getElementById("cards");
+
+    if (level == null) {
+      hint.innerHTML = "지금은 <strong>전체 몬스터</strong>를 보고 있어요. 위에 레벨을 넣으면 추천 3마리가 자세히 나옵니다.";
+      recoTitle.style.display = "none";
+      cards.style.display = "none";
+      cards.innerHTML = "";
+      listTitle.textContent = "전체 몬스터 목록";
+    } else {
+      hint.innerHTML = `내 레벨 <strong>${level}</strong> → 사냥 구간 <strong>Lv.${level} ~ ${level + 30}</strong> / 목적: <strong>${modeLabel(mode)}</strong> / 후보 ${list.length}마리`;
+      recoTitle.style.display = "";
+      recoTitle.textContent = `추천 몬스터 3종 (${modeLabel(mode)})`;
+      cards.style.display = "grid";
+      if (!top.length) {
+        cards.innerHTML = `<div class="empty" style="grid-column:1/-1">이 구간에 데이터가 있는 몹이 없어요. 레벨을 다시 확인해 주세요.</div>`;
+      } else {
+        cards.innerHTML = top.map((m, i) => cardHtml(m, i + 1)).join("");
+      }
+      listTitle.textContent = `후보 목록 (Lv.${level}~${level + 30})`;
+    }
+
+    renderTable(list);
+  }
+
+  function modeLabel(m) {
+    return m === "base" ? "Base 위주" : m === "job" ? "Job 위주" : "균형";
+  }
+
+  function mapsHtml(m) {
+    const maps = m.maps || [];
+    if (!maps.length) {
+      return `<div class="map-title">출현 위치</div><div class="map-empty">${m.mapsNote || "위치 미확인"}</div>`;
+    }
+    const pills = maps.map((x) => `<span class="map-pill" title="${x.en || ""}">${x.ko || x.en}</span>`).join("");
+    const note = m.mapsNote ? `<div class="map-note">${m.mapsNote}</div>` : "";
+    return `<div class="map-title">출현 위치</div><div class="map-pills">${pills}</div>${note}`;
+  }
+
+  function cardHtml(m, rank) {
+    const rankLabel = rank === 1 ? "1순위" : rank === 2 ? "2순위" : "3순위";
+    const modeBadge =
+      mode === "base" ? '<span class="badge base">Base</span>' :
+      mode === "job" ? '<span class="badge job">Job</span>' :
+      '<span class="badge main">균형</span>';
+    return `
+      <article class="card rank-${rank}">
+        <div class="badge-row">
+          <span class="badge main">${rankLabel}</span>
+          ${modeBadge}
+          <span class="badge">Lv.${m.lv}</span>
+          <span class="badge">${m.elem || "-"}</span>
+        </div>
+        <h3 class="name">${m.ko}</h3>
+        <p class="en">${m.en}</p>
+        <div class="stats">
+          <div class="stat"><span>Base EXP</span><b>${m.base.toLocaleString()}</b></div>
+          <div class="stat"><span>Job EXP</span><b>${m.job.toLocaleString()}</b></div>
+          <div class="stat"><span>Total</span><b>${m.total.toLocaleString()}</b></div>
+          <div class="stat"><span>효율 (EXP/HP)</span><b>${m.eff}</b></div>
+          <div class="stat"><span>HP</span><b>${m.hp.toLocaleString()}</b></div>
+          <div class="stat"><span>FLEE / DEF / MDEF</span><b>${m.flee ?? "-"} / ${m.def ?? "-"} / ${m.mdef ?? "-"}</b></div>
+        </div>
+        <div class="why">${whyText(m, mode, rank)}</div>
+        <div class="meta">장비 드롭: ${m.drop || "-"}</div>
+        <div class="meta">카드: ${m.card || "-"}</div>
+        ${m.cardStar ? `<div class="meta">카드★: ${m.cardStar}</div>` : ""}
+        <div class="maps">${mapsHtml(m)}</div>
+      </article>`;
+  }
+
+  function renderTable(list) {
+    const q = document.getElementById("q").value.trim().toLowerCase();
+    const filtered = !q
+      ? list
+      : list.filter((m) =>
+          m.ko.toLowerCase().includes(q) ||
+          m.en.toLowerCase().includes(q) ||
+          String(m.lv).includes(q)
+        );
+    const tbody = document.getElementById("tbody");
+    if (!filtered.length) {
+      tbody.innerHTML = `<tr><td colspan="10" style="text-align:center;color:#6b645a;padding:24px;">검색 결과가 없습니다.</td></tr>`;
+      return;
+    }
+    tbody.innerHTML = filtered
+      .map(
+        (m) => `<tr>
+          <td>${m.lv}</td>
+          <td title="${m.en}"><strong>${m.ko}</strong></td>
+          <td>${m.elem || "-"}</td>
+          <td>${m.hp.toLocaleString()}</td>
+          <td>${m.base.toLocaleString()}</td>
+          <td>${m.job.toLocaleString()}</td>
+          <td>${m.total.toLocaleString()}</td>
+          <td>${m.eff}</td>
+          <td>${(m.maps||[]).map(x=>x.ko||x.en).join(", ") || (m.mapsNote || "-")}</td>
+          <td>${m.drop || "-"}</td>
+        </tr>`
+      )
+      .join("");
+  }
+
+  document.getElementById("level").addEventListener("input", () => {
+    syncLevelClear()
+    render()
+  })
+  document.getElementById("levelClear").addEventListener("click", () => {
+    const el = document.getElementById("level")
+    el.value = ""
+    syncLevelClear()
+    el.focus()
+    render()
+  })
+  function syncLevelClear() {
+    const wrap = document.getElementById("levelWrap")
+    const has = document.getElementById("level").value.trim() !== ""
+    wrap.classList.toggle("has-value", has)
+  }
+  document.getElementById("q").addEventListener("input", render);
+  document.querySelectorAll("#mode button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      mode = btn.dataset.mode;
+      document.querySelectorAll("#mode button").forEach((b) => {
+        b.className = "";
+        if (b.dataset.mode === mode) {
+          b.className = "active-" + mode;
+        }
+      });
+      render();
+    });
+  });
+
+  syncLevelClear()
+  render();
+</script>
+</body>
+</html>

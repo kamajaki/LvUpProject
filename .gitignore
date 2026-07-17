@@ -1,0 +1,5 @@
+﻿# 로컬/원본만 제외 (배포에 불필요)
+monster_locations_raw.json
+*.canvas.tsx
+.DS_Store
+Thumbs.db
