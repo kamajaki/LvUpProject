@@ -3,3 +3,8 @@ monster_locations_raw.json
 *.canvas.tsx
 .DS_Store
 Thumbs.db
+_mob_db.yml
+_mob_db_re.yml
+_match_sizes.py
+_sync_monsters_html.py
+monster_size_match_report.json
