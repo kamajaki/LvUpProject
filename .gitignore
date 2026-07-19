@@ -3,8 +3,32 @@ monster_locations_raw.json
 *.canvas.tsx
 .DS_Store
 Thumbs.db
+__pycache__/
+*.pyc
+
+# rAthena / 사이즈 매칭 원본
 _mob_db.yml
 _mob_db_re.yml
 _match_sizes.py
 _sync_monsters_html.py
 monster_size_match_report.json
+
+# 임시 스크립트·덤프
+_tmp_*
+_probe_*
+_audit_*
+_final_*
+*_dump.txt
+_novice_dump.txt
+_tablemap_dump.txt
+_inject_client_hunt_test.py
+
+# 클라 원본 추출물 중 대용량/분석용 (재추출 가능)
+extracted_romc/monsters.json
+extracted_romc/items.json
+extracted_romc/classic_field_monsters.json
+extracted_romc/site_vs_client_compare.json
+extracted_romc/_extract*.txt
+
+# 구버전 클라 테스트 데이터
+leveling_monsters_client.json

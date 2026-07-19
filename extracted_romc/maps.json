@@ -1,0 +1,833 @@
+{
+  "note": "ROM Classic KR PC — ManualMap≈Table_Map.id, parent=Table_MapTransport ZoneName",
+  "count": 93,
+  "maps": [
+    {
+      "id": 2,
+      "en": "prt_1",
+      "zh": "##119326",
+      "ko": "프론테라 남문",
+      "via": "chain-verified",
+      "parentKo": "프론테라",
+      "label": "프론테라 남문"
+    },
+    {
+      "id": 3,
+      "en": "prt_sewb",
+      "zh": "##138699",
+      "ko": "지하수로 -1F",
+      "via": "direct",
+      "parentKo": "프론테라",
+      "label": "프론테라 - 지하수로 -1F"
+    },
+    {
+      "id": 4,
+      "en": "prt_sewb2",
+      "zh": "##138560",
+      "ko": "지하수로 -2F",
+      "via": "direct",
+      "parentKo": "프론테라",
+      "label": "프론테라 - 지하수로 -2F"
+    },
+    {
+      "id": 5,
+      "en": "prt_2",
+      "zh": "##119339",
+      "ko": "프론테라 서문",
+      "via": "direct",
+      "parentKo": "프론테라",
+      "label": "프론테라 서문"
+    },
+    {
+      "id": 6,
+      "en": "prt_maze1",
+      "zh": "##104879",
+      "ko": "미로숲",
+      "via": "chain-verified",
+      "parentKo": "프론테라",
+      "label": "프론테라 - 미로숲"
+    },
+    {
+      "id": 7,
+      "en": "izlude",
+      "zh": "##138984",
+      "ko": "이즈루드",
+      "via": "chain-verified",
+      "parentKo": "이즈루드",
+      "label": "이즈루드"
+    },
+    {
+      "id": 8,
+      "en": "ghostship",
+      "zh": "##138593",
+      "ko": "침몰선",
+      "via": "direct",
+      "parentKo": "이즈루드",
+      "label": "이즈루드 - 침몰선"
+    },
+    {
+      "id": 9,
+      "en": "ghostship2",
+      "zh": "##138834",
+      "ko": "유령선",
+      "via": "direct",
+      "parentKo": "이즈루드",
+      "label": "이즈루드 - 유령선"
+    },
+    {
+      "id": 10,
+      "en": "byalan",
+      "zh": "##138965",
+      "ko": "바이아란 섬",
+      "via": "chain-verified",
+      "parentKo": "이즈루드",
+      "label": "이즈루드 - 바이아란 섬"
+    },
+    {
+      "id": 11,
+      "en": "iz_dun1",
+      "zh": "##138566",
+      "ko": "해저동굴",
+      "via": "chain-verified",
+      "parentKo": "이즈루드",
+      "label": "이즈루드 - 해저동굴"
+    },
+    {
+      "id": 12,
+      "en": "iz_dun2",
+      "zh": "##114888",
+      "ko": "해저신전",
+      "via": "chain-verified",
+      "parentKo": "이즈루드",
+      "label": "이즈루드 - 해저신전"
+    },
+    {
+      "id": 13,
+      "en": "geffen",
+      "zh": "##117894",
+      "ko": "게펜",
+      "via": "chain-verified",
+      "parentKo": "게펜",
+      "label": "게펜"
+    },
+    {
+      "id": 14,
+      "en": "mjolnir",
+      "zh": "##139062",
+      "ko": "묘르닐 산맥",
+      "via": "direct",
+      "parentKo": "게펜",
+      "label": "게펜 - 묘르닐 산맥"
+    },
+    {
+      "id": 15,
+      "en": "ant_dun1",
+      "zh": "##138897",
+      "ko": "개미굴",
+      "via": "chain-verified",
+      "parentKo": "모로크",
+      "label": "모로크 - 개미굴"
+    },
+    {
+      "id": 16,
+      "en": "morocc",
+      "zh": "##103505",
+      "ko": "모로크",
+      "via": "direct",
+      "parentKo": "모로크",
+      "label": "모로크"
+    },
+    {
+      "id": 17,
+      "en": "moc_pyd1",
+      "zh": "##138789",
+      "ko": "피라미드1F",
+      "via": "chain-verified",
+      "parentKo": "모로크",
+      "label": "모로크 - 피라미드1F"
+    },
+    {
+      "id": 18,
+      "en": "payon",
+      "zh": "##123656",
+      "ko": "페이욘",
+      "via": "direct",
+      "parentKo": "페이욘",
+      "label": "페이욘"
+    },
+    {
+      "id": 19,
+      "en": "pay_fild2",
+      "zh": "##138548",
+      "ko": "페이욘 남 필드",
+      "via": "direct",
+      "parentKo": "페이욘",
+      "label": "페이욘 남 필드"
+    },
+    {
+      "id": 20,
+      "en": "pay_dun1",
+      "zh": "##138797",
+      "ko": "페이욘 동굴1F",
+      "via": "chain-verified",
+      "parentKo": "페이욘",
+      "label": "페이욘 동굴1F"
+    },
+    {
+      "id": 21,
+      "en": "moc_pyd2",
+      "zh": "##139051",
+      "ko": "피라미드2F",
+      "via": "chain-verified",
+      "parentKo": "모로크",
+      "label": "모로크 - 피라미드2F"
+    },
+    {
+      "id": 22,
+      "en": "pay_dun2",
+      "zh": "##117874",
+      "ko": "페이욘 동굴2F",
+      "via": "direct",
+      "parentKo": "페이욘",
+      "label": "페이욘 동굴2F"
+    },
+    {
+      "id": 23,
+      "en": "orc_village",
+      "zh": "##139028",
+      "ko": "오크 마을",
+      "via": "chain-verified",
+      "parentKo": "게펜",
+      "label": "게펜 - 오크 마을"
+    },
+    {
+      "id": 24,
+      "en": "gef_dun1",
+      "zh": "##138760",
+      "ko": "게펜탑 지하",
+      "via": "direct",
+      "parentKo": "게펜",
+      "label": "게펜탑 지하"
+    },
+    {
+      "id": 25,
+      "en": "orc_dun1",
+      "zh": "##138523",
+      "ko": "오크 지하동굴",
+      "via": "direct",
+      "parentKo": "게펜",
+      "label": "게펜 - 오크 지하동굴"
+    },
+    {
+      "id": 26,
+      "en": "glt_1",
+      "zh": "##138565",
+      "ko": "고성 외곽",
+      "via": "chain-verified",
+      "parentKo": "글래스트 헤임",
+      "label": "글래스트 헤임 - 고성 외곽"
+    },
+    {
+      "id": 27,
+      "en": "glastham",
+      "zh": "##124666",
+      "ko": "글레스트헤임",
+      "via": "direct",
+      "parentKo": "글래스트 헤임",
+      "label": "글래스트 헤임 - 글레스트헤임"
+    },
+    {
+      "id": 28,
+      "en": "glt_s",
+      "zh": "##139093",
+      "ko": "고성 지하수로",
+      "via": "chain-verified",
+      "parentKo": "글래스트 헤임",
+      "label": "글래스트 헤임 - 고성 지하수로"
+    },
+    {
+      "id": 29,
+      "en": "glt_k",
+      "zh": "##138963",
+      "ko": "고성 기사단",
+      "via": "chain-verified",
+      "parentKo": "글래스트 헤임",
+      "label": "글래스트 헤임 - 고성 기사단"
+    },
+    {
+      "id": 30,
+      "en": "glt_h",
+      "zh": "##123810",
+      "ko": "고성 로비",
+      "via": "chain-verified",
+      "parentKo": "글래스트 헤임",
+      "label": "글래스트 헤임 - 고성 로비"
+    },
+    {
+      "id": 31,
+      "en": "iz_endless",
+      "zh": "##138832",
+      "ko": "엔들리스 섬",
+      "via": "direct",
+      "parentKo": "이즈루드",
+      "label": "이즈루드 - 엔들리스 섬"
+    },
+    {
+      "id": 32,
+      "en": "pay_fild1",
+      "zh": "##138660",
+      "ko": "페이욘 숲",
+      "via": "direct",
+      "parentKo": "페이욘",
+      "label": "페이욘 숲"
+    },
+    {
+      "id": 33,
+      "en": "gef_goblin",
+      "zh": "##123827",
+      "ko": "고블린 숲",
+      "via": "direct",
+      "parentKo": "게펜",
+      "label": "게펜 - 고블린 숲"
+    },
+    {
+      "id": 34,
+      "en": "gef_kobold",
+      "zh": "##139031",
+      "ko": "코볼트 숲",
+      "via": "direct",
+      "parentKo": "게펜",
+      "label": "게펜 - 코볼트 숲"
+    },
+    {
+      "id": 35,
+      "en": "sukrat",
+      "zh": "##123857",
+      "ko": "소그라트 사막",
+      "via": "chain-verified",
+      "parentKo": "모로크",
+      "label": "모로크 - 소그라트 사막"
+    },
+    {
+      "id": 36,
+      "en": "room_flag",
+      "zh": "##139072",
+      "ko": "GVG 입구",
+      "via": "direct"
+    },
+    {
+      "id": 37,
+      "en": "glt_2",
+      "zh": "##138763",
+      "ko": "고성 묘지",
+      "via": "direct",
+      "parentKo": "글래스트 헤임",
+      "label": "글래스트 헤임 - 고성 묘지"
+    },
+    {
+      "id": 38,
+      "en": "ant_dun2",
+      "zh": "##138596",
+      "ko": "개미지옥",
+      "via": "direct",
+      "parentKo": "모로크",
+      "label": "모로크 - 개미지옥"
+    },
+    {
+      "id": 42,
+      "en": "prt_4",
+      "zh": "##138501",
+      "ko": "프론테라 북부",
+      "via": "direct",
+      "parentKo": "프론테라",
+      "label": "프론테라 북부"
+    },
+    {
+      "id": 43,
+      "en": "aldebaran",
+      "zh": "##123647",
+      "ko": "알데바란",
+      "via": "chain-verified",
+      "parentKo": "알데바란",
+      "label": "알데바란"
+    },
+    {
+      "id": 44,
+      "en": "clocktower1",
+      "zh": "##123803",
+      "ko": "시계탑 1F",
+      "via": "direct",
+      "parentKo": "알데바란",
+      "label": "알데바란 - 시계탑 1F"
+    },
+    {
+      "id": 45,
+      "en": "clocktower2",
+      "zh": "##123833",
+      "ko": "시계탑 2F",
+      "via": "chain-verified",
+      "parentKo": "알데바란",
+      "label": "알데바란 - 시계탑 2F"
+    },
+    {
+      "id": 46,
+      "en": "clocktower_dun1",
+      "zh": "##138859",
+      "ko": "시계탑 지하",
+      "via": "direct",
+      "parentKo": "알데바란",
+      "label": "알데바란 - 시계탑 지하"
+    },
+    {
+      "id": 47,
+      "en": "room_prt_1F",
+      "zh": "##138745",
+      "ko": "왕실 1F",
+      "via": "direct"
+    },
+    {
+      "id": 48,
+      "en": "xmas",
+      "zh": "##104460",
+      "ko": "루티에",
+      "via": "chain-verified",
+      "parentKo": "루티에",
+      "label": "루티에"
+    },
+    {
+      "id": 49,
+      "en": "xmas_dun01",
+      "zh": "##123820",
+      "ko": "장난감 공장 1층",
+      "via": "chain-verified",
+      "parentKo": "루티에",
+      "label": "루티에 - 장난감 공장 1층"
+    },
+    {
+      "id": 50,
+      "en": "xmas_dun02",
+      "zh": "##138676",
+      "ko": "장난감 공장 2층",
+      "via": "direct",
+      "parentKo": "루티에",
+      "label": "루티에 - 장난감 공장 2층"
+    },
+    {
+      "id": 51,
+      "en": "kafrawar",
+      "zh": "##138475",
+      "ko": "카프라 방어전",
+      "via": "chain-verified"
+    },
+    {
+      "id": 52,
+      "en": "iz_poring",
+      "zh": "##119349",
+      "ko": "포링섬",
+      "via": "chain-verified",
+      "parentKo": "페이욘",
+      "label": "페이욘 - 포링섬"
+    },
+    {
+      "id": 53,
+      "en": "moc_pyd3",
+      "zh": "##138507",
+      "ko": "피라미드 3F",
+      "via": "direct",
+      "parentKo": "모로크",
+      "label": "모로크 - 피라미드 3F"
+    },
+    {
+      "id": 54,
+      "en": "pay_fild3",
+      "zh": "##138628",
+      "ko": "페이욘 숲 남부",
+      "via": "direct",
+      "parentKo": "페이욘",
+      "label": "페이욘 숲 남부"
+    },
+    {
+      "id": 55,
+      "en": "pay_dun3",
+      "zh": "##139123",
+      "ko": "페이욘 동굴 3F",
+      "via": "chain-verified",
+      "parentKo": "페이욘",
+      "label": "페이욘 동굴 3F"
+    },
+    {
+      "id": 56,
+      "en": "orc_village2",
+      "zh": "##138968",
+      "ko": "오크 마을 남부",
+      "via": "chain-verified",
+      "parentKo": "게펜",
+      "label": "게펜 - 오크 마을 남부"
+    },
+    {
+      "id": 57,
+      "en": "gef_dun2",
+      "zh": "##139120",
+      "ko": "게펜 지하 2F",
+      "via": "chain-verified",
+      "parentKo": "게펜",
+      "label": "게펜 지하 2F"
+    },
+    {
+      "id": 58,
+      "en": "gef_kobold2",
+      "zh": "##138903",
+      "ko": "깊은 코볼트 숲",
+      "via": "direct",
+      "parentKo": "게펜",
+      "label": "게펜 - 깊은 코볼트 숲"
+    },
+    {
+      "id": 59,
+      "en": "glt_3",
+      "zh": "##138802",
+      "ko": "고성 변방",
+      "via": "chain-verified",
+      "parentKo": "글래스트 헤임",
+      "label": "글래스트 헤임 - 고성 변방"
+    },
+    {
+      "id": 60,
+      "en": "glt_h2",
+      "zh": "##138583",
+      "ko": "고성 별관",
+      "via": "chain-verified",
+      "parentKo": "글래스트 헤임",
+      "label": "글래스트 헤임 - 고성 별관"
+    },
+    {
+      "id": 61,
+      "en": "glt_4",
+      "zh": "##138841",
+      "ko": "고성 묘지 2F",
+      "via": "chain-verified",
+      "parentKo": "글래스트 헤임",
+      "label": "글래스트 헤임 - 고성 묘지 2F"
+    },
+    {
+      "id": 62,
+      "en": "amatsu",
+      "zh": "##104429",
+      "ko": "아마쯔",
+      "via": "chain-verified",
+      "parentKo": "아마쯔",
+      "label": "아마쯔"
+    },
+    {
+      "id": 63,
+      "en": "yuno",
+      "zh": "##104369",
+      "ko": "유노",
+      "via": "direct",
+      "parentKo": "유노",
+      "label": "유노"
+    },
+    {
+      "id": 64,
+      "en": "yuno_fild1",
+      "zh": "##115913",
+      "ko": "국경 검문소",
+      "via": "chain-verified",
+      "parentKo": "유노",
+      "label": "유노 - 국경 검문소"
+    },
+    {
+      "id": 65,
+      "en": "yuno_fild2",
+      "zh": "##123707",
+      "ko": "아인브로크 필드",
+      "via": "chain-verified",
+      "parentKo": "유노",
+      "label": "유노 - 아인브로크 필드"
+    },
+    {
+      "id": 66,
+      "en": "lava_dun1",
+      "zh": "##123765",
+      "ko": "노그로드1F",
+      "via": "direct",
+      "parentKo": "유노",
+      "label": "유노 - 노그로드1F"
+    },
+    {
+      "id": 67,
+      "en": "lava_dun2",
+      "zh": "##139022",
+      "ko": "노그로드2F",
+      "via": "direct",
+      "parentKo": "유노",
+      "label": "유노 - 노그로드2F"
+    },
+    {
+      "id": 68,
+      "en": "lava_dun3",
+      "zh": "##138564",
+      "ko": "노그로드3F",
+      "via": "chain-verified",
+      "parentKo": "유노",
+      "label": "유노 - 노그로드3F"
+    },
+    {
+      "id": 69,
+      "en": "lighttower",
+      "zh": "##138513",
+      "ko": "파로스 등대",
+      "via": "direct",
+      "parentKo": "모로크",
+      "label": "모로크 - 파로스 등대"
+    },
+    {
+      "id": 70,
+      "en": "niflhem",
+      "zh": "##123664",
+      "ko": "니플헤임",
+      "via": "chain-verified",
+      "parentKo": "니플헤임",
+      "label": "니플헤임"
+    },
+    {
+      "id": 71,
+      "en": "nif_fild1",
+      "zh": "##292639",
+      "ko": "안개숲",
+      "via": "direct",
+      "parentKo": "니플헤임",
+      "label": "니플헤임 - 안개숲"
+    },
+    {
+      "id": 72,
+      "en": "nif_fild2",
+      "zh": "##123770",
+      "ko": "스켈링튼",
+      "via": "chain-verified",
+      "parentKo": "니플헤임",
+      "label": "니플헤임 - 스켈링튼"
+    },
+    {
+      "id": 73,
+      "en": "nif_fild3",
+      "zh": "##138500",
+      "ko": "하멜른",
+      "via": "chain-verified",
+      "parentKo": "니플헤임",
+      "label": "니플헤임 - 하멜른"
+    },
+    {
+      "id": 74,
+      "en": "yggdrasil",
+      "zh": "##138724",
+      "ko": "흐베르겔미르",
+      "via": "chain-verified",
+      "parentKo": "니플헤임",
+      "label": "니플헤임 - 흐베르겔미르"
+    },
+    {
+      "id": 75,
+      "en": "umbala",
+      "zh": "##137579",
+      "ko": "움발라",
+      "via": "chain-verified",
+      "parentKo": "움발라",
+      "label": "움발라"
+    },
+    {
+      "id": 76,
+      "en": "lighthalzen",
+      "zh": "##105365",
+      "ko": "리히타르젠",
+      "via": "chain-verified",
+      "parentKo": "리히타르젠",
+      "label": "리히타르젠"
+    },
+    {
+      "id": 77,
+      "en": "lhz_fild01",
+      "zh": "##123730",
+      "ko": "리히타르젠 필드",
+      "via": "direct",
+      "parentKo": "리히타르젠",
+      "label": "리히타르젠 필드"
+    },
+    {
+      "id": 78,
+      "en": "lhz_1",
+      "zh": "##123779",
+      "ko": "생체실험 연구소 지하1F",
+      "via": "chain-verified",
+      "parentKo": "리히타르젠",
+      "label": "리히타르젠 - 생체실험 연구소 지하1F"
+    },
+    {
+      "id": 79,
+      "en": "lhz_2e",
+      "zh": "##138807",
+      "ko": "생체실험 연구소 지하2F 동쪽",
+      "via": "direct",
+      "parentKo": "리히타르젠",
+      "label": "리히타르젠 - 생체실험 연구소 지하2F 동쪽"
+    },
+    {
+      "id": 80,
+      "en": "lhz_2w",
+      "zh": "##139149",
+      "ko": "생체실험 연구소 지하2F 서쪽",
+      "via": "chain-verified",
+      "parentKo": "리히타르젠",
+      "label": "리히타르젠 - 생체실험 연구소 지하2F 서쪽"
+    },
+    {
+      "id": 81,
+      "en": "lhz_3",
+      "zh": "##139014",
+      "ko": "생체실험 연구소 지하3F",
+      "via": "chain-verified",
+      "parentKo": "리히타르젠",
+      "label": "리히타르젠 - 생체실험 연구소 지하3F"
+    },
+    {
+      "id": 82,
+      "en": "thana",
+      "zh": "##113986",
+      "ko": "타나토스 타워",
+      "via": "chain-verified",
+      "parentKo": "타나토스 타워",
+      "label": "타나토스 타워"
+    },
+    {
+      "id": 83,
+      "en": "eda_fild01",
+      "zh": "##123731",
+      "ko": "이다 평원",
+      "via": "chain-verified",
+      "parentKo": "라헬",
+      "label": "라헬 - 이다 평원"
+    },
+    {
+      "id": 84,
+      "en": "ice_dun01",
+      "zh": "##123740",
+      "ko": "라헬 얼음 동굴",
+      "via": "chain-verified",
+      "parentKo": "라헬",
+      "label": "라헬 얼음 동굴"
+    },
+    {
+      "id": 85,
+      "en": "rachel",
+      "zh": "##105625",
+      "ko": "라헬",
+      "via": "chain-verified",
+      "parentKo": "라헬",
+      "label": "라헬"
+    },
+    {
+      "id": 86,
+      "en": "room_san01",
+      "zh": "##114146",
+      "ko": "라헬 신전 성역",
+      "via": "direct",
+      "parentKo": "라헬",
+      "label": "라헬 신전 성역"
+    },
+    {
+      "id": 87,
+      "en": "ra_san01",
+      "zh": "##123809",
+      "ko": "라헬 신전 성역지하",
+      "via": "chain-partial",
+      "parentKo": "라헬",
+      "label": "라헬 신전 성역지하"
+    },
+    {
+      "id": 97,
+      "en": "yggdrasil_in",
+      "zh": "##138910",
+      "ko": "이그드라실 내부",
+      "via": "direct"
+    },
+    {
+      "id": 98,
+      "en": "luo_dun01",
+      "zh": "##138474",
+      "ko": "은어호수 아래",
+      "via": "chain-verified",
+      "parentKo": "용지성",
+      "label": "용지성 - 은어호수 아래"
+    },
+    {
+      "id": 99,
+      "en": "luoyang",
+      "zh": "##105375",
+      "ko": "용지성",
+      "via": "chain-verified",
+      "parentKo": "용지성",
+      "label": "용지성"
+    },
+    {
+      "id": 100,
+      "en": "luo_dt",
+      "zh": "##139117",
+      "ko": "번화가",
+      "via": "direct",
+      "parentKo": "용지성",
+      "label": "용지성 - 번화가"
+    },
+    {
+      "id": 101,
+      "en": "luo_fild01",
+      "zh": "##139063",
+      "ko": "석양 여울",
+      "via": "chain-partial",
+      "parentKo": "용지성",
+      "label": "용지성 - 석양 여울"
+    },
+    {
+      "id": 102,
+      "en": "eclage",
+      "zh": "##530662",
+      "ko": "이카라기",
+      "via": "chain-partial",
+      "parentKo": "이카라기",
+      "label": "이카라기"
+    },
+    {
+      "id": 103,
+      "en": "guildgarden_clock",
+      "zh": "##531318",
+      "ko": "시간의 화원",
+      "via": "chain-partial"
+    },
+    {
+      "id": 110,
+      "en": "map_110",
+      "zh": "",
+      "ko": "이카라기",
+      "label": "이카라기",
+      "parentKo": "이카라기",
+      "via": "transport-parent"
+    },
+    {
+      "id": 117,
+      "en": "ac_room",
+      "zh": "##530214",
+      "ko": "별의 전당",
+      "via": "transport-cand",
+      "parentKo": "이카라기",
+      "label": "이카라기 - 별의 전당"
+    },
+    {
+      "id": 120,
+      "en": "map_120",
+      "zh": "",
+      "ko": "이카라기",
+      "label": "이카라기",
+      "parentKo": "이카라기",
+      "via": "transport-parent"
+    }
+  ]
+}
