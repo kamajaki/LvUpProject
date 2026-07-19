@@ -31,13 +31,13 @@
         "mapCode": "prt_1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 2,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -67,10 +67,10 @@
     "mapsNote": "출현지 미확인",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 91,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -105,13 +105,13 @@
         "mapCode": "prt_1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 2,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -146,13 +146,13 @@
         "mapCode": "prt_1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 2,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -186,13 +186,13 @@
         "mapKo": "개화 시작의 땅"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 114,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -222,10 +222,10 @@
     "mapsNote": "출현지 미확인",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 91,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -259,13 +259,13 @@
         "mapKo": "개화 시작의 땅"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 114,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -300,13 +300,13 @@
         "mapCode": "payon"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 18,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -336,10 +336,10 @@
     "mapsNote": "출현지 미확인",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": null,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -374,13 +374,13 @@
         "mapCode": "prt_sewb"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 3,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -415,13 +415,13 @@
         "mapCode": "prt_sewb"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 3,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -456,13 +456,13 @@
         "mapCode": "prt_2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 5,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -492,10 +492,10 @@
     "mapsNote": "출현지 미확인",
     "size": "소형",
     "sizeEn": "Small",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 93,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -530,13 +530,13 @@
         "mapCode": "prt_sewb"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 3,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -571,13 +571,13 @@
         "mapCode": "prt_2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 5,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -607,10 +607,10 @@
     "mapsNote": "출현지 미확인",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 95,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -645,13 +645,13 @@
         "mapCode": "prt_sewb"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 3,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -686,13 +686,13 @@
         "mapCode": "prt_4"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 42,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -727,13 +727,13 @@
         "mapCode": "prt_2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 5,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -768,13 +768,13 @@
         "mapCode": "prt_sewb2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 4,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -809,13 +809,13 @@
         "mapCode": "prt_sewb2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 4,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -850,13 +850,13 @@
         "mapCode": "mjolnir"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 14,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -891,13 +891,13 @@
         "mapCode": "prt_2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 5,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -932,13 +932,13 @@
         "mapCode": "mjolnir"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 14,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -973,13 +973,13 @@
         "mapCode": "ghostship"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 8,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1009,10 +1009,10 @@
     "mapsNote": "출현지 미확인",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 92,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -1047,13 +1047,13 @@
         "mapCode": "prt_maze1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 6,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1088,13 +1088,13 @@
         "mapCode": "ghostship"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 8,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1124,10 +1124,10 @@
     "mapsNote": "출현지 미확인",
     "size": "소형",
     "sizeEn": "Small",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 92,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -1162,13 +1162,13 @@
         "mapCode": "ghostship2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 9,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1203,13 +1203,13 @@
         "mapCode": "ghostship"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 8,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1244,13 +1244,13 @@
         "mapCode": "ghostship"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 8,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1280,10 +1280,10 @@
     "mapsNote": "출현지 미확인",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": null,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -1313,10 +1313,10 @@
     "mapsNote": "출현지 미확인",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 92,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -1351,13 +1351,13 @@
         "mapCode": "iz_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 11,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1392,13 +1392,13 @@
         "mapCode": "ghostship2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 9,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1433,13 +1433,13 @@
         "mapCode": "iz_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 11,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1474,13 +1474,13 @@
         "mapCode": "iz_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 11,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1515,13 +1515,13 @@
         "mapCode": "iz_dun2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 12,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1556,13 +1556,13 @@
         "mapCode": "iz_dun2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 12,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1597,13 +1597,13 @@
         "mapCode": "gef_goblin"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 33,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1638,13 +1638,13 @@
         "mapCode": "gef_goblin"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 33,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1679,13 +1679,13 @@
         "mapCode": "gef_goblin"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 33,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1720,13 +1720,13 @@
         "mapCode": "gef_goblin"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 33,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1761,13 +1761,13 @@
         "mapCode": "gef_goblin"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 33,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1802,13 +1802,13 @@
         "mapCode": "iz_dun2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 12,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1838,10 +1838,10 @@
     "mapsNote": "출현지 미확인",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": null,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -1876,13 +1876,13 @@
         "mapCode": "gef_goblin"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 33,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1917,13 +1917,13 @@
         "mapCode": "mjolnir"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 14,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1958,13 +1958,13 @@
         "mapCode": "gef_goblin"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 33,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -1999,13 +1999,13 @@
         "mapCode": "ant_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 15,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2040,13 +2040,13 @@
         "mapCode": "mjolnir"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 14,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2081,13 +2081,13 @@
         "mapCode": "ant_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 15,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2122,13 +2122,13 @@
         "mapCode": "mjolnir"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 14,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2163,13 +2163,13 @@
         "mapCode": "ant_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 15,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2204,13 +2204,13 @@
         "mapCode": "mjolnir"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 14,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2245,13 +2245,13 @@
         "mapCode": "ant_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 15,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2286,13 +2286,13 @@
         "mapCode": "ant_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 15,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2327,13 +2327,13 @@
         "mapCode": "ant_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 15,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2368,13 +2368,13 @@
         "mapCode": "morocc"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 16,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2409,13 +2409,13 @@
         "mapCode": "morocc"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 16,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2450,13 +2450,13 @@
         "mapCode": "morocc"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 16,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2491,13 +2491,13 @@
         "mapCode": "moc_pyd1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 17,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2532,13 +2532,13 @@
         "mapCode": "morocc"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 16,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2573,13 +2573,13 @@
         "mapCode": "ant_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 15,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2614,13 +2614,13 @@
         "mapCode": "moc_pyd1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 17,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2655,13 +2655,13 @@
         "mapCode": "morocc"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 16,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2696,13 +2696,13 @@
         "mapCode": "prt_4"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 42,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2737,13 +2737,13 @@
         "mapCode": "pay_fild2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 19,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2778,13 +2778,13 @@
         "mapCode": "moc_pyd1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 17,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2819,13 +2819,13 @@
         "mapCode": "pay_fild1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 32,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2860,13 +2860,13 @@
         "mapCode": "pay_fild1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 32,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2901,13 +2901,13 @@
         "mapCode": "pay_fild1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 32,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2942,13 +2942,13 @@
         "mapCode": "pay_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 20,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -2983,13 +2983,13 @@
         "mapCode": "pay_dun2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 22,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3024,13 +3024,13 @@
         "mapCode": "prt_4"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 42,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3065,13 +3065,13 @@
         "mapCode": "pay_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 20,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3106,13 +3106,13 @@
         "mapCode": "moc_pyd2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 21,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3147,13 +3147,13 @@
         "mapCode": "pay_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 20,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3188,13 +3188,13 @@
         "mapCode": "prt_4"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 42,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3229,13 +3229,13 @@
         "mapCode": "moc_pyd2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 21,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3270,13 +3270,13 @@
         "mapCode": "pay_dun2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 22,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3311,13 +3311,13 @@
         "mapCode": "moc_pyd2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 21,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3352,13 +3352,13 @@
         "mapCode": "pay_dun2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 22,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3393,13 +3393,13 @@
         "mapCode": "orc_village"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 23,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3434,13 +3434,13 @@
         "mapCode": "orc_village"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 23,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3475,13 +3475,13 @@
         "mapCode": "pay_dun2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 22,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3516,13 +3516,13 @@
         "mapCode": "gef_kobold"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 34,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3557,13 +3557,13 @@
         "mapCode": "orc_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 25,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3598,13 +3598,13 @@
         "mapCode": "gef_kobold"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 34,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3639,13 +3639,13 @@
         "mapCode": "gef_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 24,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3680,13 +3680,13 @@
         "mapCode": "gef_kobold"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 34,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3721,13 +3721,13 @@
         "mapCode": "orc_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 25,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3762,13 +3762,13 @@
         "mapCode": "gef_kobold"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 34,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3803,13 +3803,13 @@
         "mapCode": "xmas_dun01"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 49,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3844,13 +3844,13 @@
         "mapCode": "gef_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 24,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3885,13 +3885,13 @@
         "mapCode": "orc_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 25,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3926,13 +3926,13 @@
         "mapCode": "glt_1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 26,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -3967,13 +3967,13 @@
         "mapCode": "xmas_dun01"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 49,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4008,13 +4008,13 @@
         "mapCode": "gef_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 24,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4049,13 +4049,13 @@
         "mapCode": "glastham"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 27,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4090,13 +4090,13 @@
         "mapCode": "orc_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 25,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4131,13 +4131,13 @@
         "mapCode": "glastham"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 27,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4172,13 +4172,13 @@
         "mapCode": "glt_k"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 29,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4213,13 +4213,13 @@
         "mapCode": "xmas_dun01"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 49,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4254,13 +4254,13 @@
         "mapCode": "glt_1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 26,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4295,13 +4295,13 @@
         "mapCode": "glastham"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 27,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -4336,13 +4336,13 @@
         "mapCode": "glt_s"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 28,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4377,13 +4377,13 @@
         "mapCode": "glt_2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 37,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4418,13 +4418,13 @@
         "mapCode": "glt_h"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 30,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4459,13 +4459,13 @@
         "mapCode": "glt_h"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 30,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4500,13 +4500,13 @@
         "mapCode": "xmas_dun01"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 49,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4541,13 +4541,13 @@
         "mapCode": "glt_s"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 28,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4582,13 +4582,13 @@
         "mapCode": "glt_s"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 28,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4623,13 +4623,13 @@
         "mapCode": "glt_2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 37,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4664,13 +4664,13 @@
         "mapCode": "glt_k"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 29,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4705,13 +4705,13 @@
         "mapCode": "glt_h"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 30,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4746,13 +4746,13 @@
         "mapCode": "glt_2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 37,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4787,13 +4787,13 @@
         "mapCode": "clocktower1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 44,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4828,13 +4828,13 @@
         "mapCode": "glt_k"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 29,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4869,13 +4869,13 @@
         "mapCode": "glt_2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 37,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4910,13 +4910,13 @@
         "mapCode": "clocktower1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 44,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4951,13 +4951,13 @@
         "mapCode": "glt_h"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 30,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -4992,13 +4992,13 @@
         "mapCode": "xmas_dun02"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 50,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5033,13 +5033,13 @@
         "mapCode": "clocktower1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 44,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5074,13 +5074,13 @@
         "mapCode": "glt_h"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 30,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5115,13 +5115,13 @@
         "mapCode": "clocktower1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 44,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5156,13 +5156,13 @@
         "mapCode": "glt_h"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 30,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5197,13 +5197,13 @@
         "mapCode": "clocktower2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 45,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5238,13 +5238,13 @@
         "mapCode": "clocktower_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 46,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5279,13 +5279,13 @@
         "mapCode": "lhz_fild01"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 77,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5320,13 +5320,13 @@
         "mapCode": "clocktower_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 46,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5361,13 +5361,13 @@
         "mapCode": "clocktower_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 46,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5402,13 +5402,13 @@
         "mapCode": "lhz_fild01"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 77,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5443,13 +5443,13 @@
         "mapCode": "clocktower_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 46,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5484,13 +5484,13 @@
         "mapCode": "lhz_fild01"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 77,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5525,13 +5525,13 @@
         "mapCode": "lhz_1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 78,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -5566,13 +5566,13 @@
         "mapCode": "lhz_2e"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 79,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5607,13 +5607,13 @@
         "mapCode": "lhz_2e"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 79,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5648,13 +5648,13 @@
         "mapCode": "yuno_fild2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 65,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5689,13 +5689,13 @@
         "mapCode": "lhz_1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 78,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5730,13 +5730,13 @@
         "mapCode": "lhz_2e"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 79,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5771,13 +5771,13 @@
         "mapCode": "yuno_fild1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 64,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5812,13 +5812,13 @@
         "mapCode": "lhz_2e"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 79,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5853,13 +5853,13 @@
         "mapCode": "yuno_fild1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 64,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5894,13 +5894,13 @@
         "mapCode": "lava_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 66,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -5935,13 +5935,13 @@
         "mapCode": "lhz_1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 78,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -5976,13 +5976,13 @@
         "mapCode": "lava_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 66,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -6017,13 +6017,13 @@
         "mapCode": "nif_fild1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 71,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -6058,13 +6058,13 @@
         "mapCode": "lhz_2e"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 79,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -6099,13 +6099,13 @@
         "mapCode": "yuno_fild1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 64,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -6140,13 +6140,13 @@
         "mapCode": "nif_fild2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 72,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -6181,13 +6181,13 @@
         "mapCode": "lava_dun2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 67,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -6222,13 +6222,13 @@
         "mapCode": "nif_fild1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "대형",
     "sizeEn": "Large",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 71,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -6263,13 +6263,13 @@
         "mapCode": "lhz_1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 78,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -6304,13 +6304,13 @@
         "mapCode": "nif_fild1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 71,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -6345,13 +6345,13 @@
         "mapCode": "lava_dun1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 66,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -6386,13 +6386,13 @@
         "mapCode": "luo_fild01"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "크기 미확인 — 인게임 도감 확인",
     "zone": "Field",
     "manualMap": 101,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -6427,13 +6427,13 @@
         "mapCode": "nif_fild2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 72,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -6468,13 +6468,13 @@
         "mapCode": "nif_fild1"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 71,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -6509,13 +6509,13 @@
         "mapCode": "luo_fild01"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 101,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -6550,13 +6550,13 @@
         "mapCode": "nif_fild2"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "크기 미확인 — 인게임 도감 확인",
     "zone": "Field",
     "manualMap": 72,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -6591,13 +6591,13 @@
         "mapCode": "luo_fild01"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 101,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -6632,13 +6632,13 @@
         "mapCode": "luo_dun01"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 98,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -6672,13 +6672,13 @@
         "mapKo": "코모도·고대 시대"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 146,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -6713,13 +6713,13 @@
         "mapCode": "ra_san01"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 87,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -6753,13 +6753,13 @@
         "mapKo": "코모도·고대 시대"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 147,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -6794,13 +6794,13 @@
         "mapCode": "eda_fild01"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 83,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -6834,13 +6834,13 @@
         "mapKo": "코모도·고대 시대"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 146,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -6874,13 +6874,13 @@
         "mapKo": "타나토스 타워"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "대형",
     "sizeEn": "Large",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 154,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -6914,13 +6914,13 @@
         "mapKo": "타나토스 타워"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 154,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -6954,13 +6954,13 @@
         "mapKo": "타나토스 타워"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 154,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -6995,13 +6995,13 @@
         "mapCode": "ice_dun01"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 84,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -7035,13 +7035,13 @@
         "mapKo": "코모도·고대 시대"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 147,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -7076,13 +7076,13 @@
         "mapCode": "eda_fild01"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 83,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -7116,13 +7116,13 @@
         "mapKo": "코모도·고대 시대"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 146,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -7157,13 +7157,13 @@
         "mapCode": "ice_dun01"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 84,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -7197,13 +7197,13 @@
         "mapKo": "코모도·고대 시대"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 147,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -7237,13 +7237,13 @@
         "mapKo": "타나토스 타워"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "대형",
     "sizeEn": "Large",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 154,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -7277,13 +7277,13 @@
         "mapKo": "타나토스 타워"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 154,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -7317,13 +7317,13 @@
         "mapKo": "타나토스 타워"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 154,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -7357,13 +7357,13 @@
         "mapKo": "타나토스 타워"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "대형",
     "sizeEn": "Large",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 155,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -7397,13 +7397,13 @@
         "mapKo": "타나토스 타워"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "대형",
     "sizeEn": "Large",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 155,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -7438,13 +7438,13 @@
         "mapCode": "eda_fild01"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 83,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -7478,13 +7478,13 @@
         "mapKo": "이카라기"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "소형",
     "sizeEn": "Small",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 110,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -7518,13 +7518,13 @@
         "mapKo": "코모도·고대 시대"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 148,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -7559,13 +7559,13 @@
         "mapCode": "ice_dun01"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "중형",
     "sizeEn": "Medium",
     "sizeNote": "PC 라그(rAthena) Size 기준 — 클래식과 다를 수 있음",
     "zone": "Field",
     "manualMap": 84,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -7599,13 +7599,13 @@
         "mapKo": "이카라기"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 120,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -7639,13 +7639,13 @@
         "mapKo": "코모도·고대 시대"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 147,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -7679,13 +7679,13 @@
         "mapKo": "타나토스 타워"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "대형",
     "sizeEn": "Large",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 154,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -7719,13 +7719,13 @@
         "mapKo": "타나토스 타워"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "대형",
     "sizeEn": "Large",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 154,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -7760,13 +7760,13 @@
         "mapCode": "ra_san01"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "크기 미확인 — 인게임 도감 확인",
     "zone": "Field",
     "manualMap": 87,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -7800,13 +7800,13 @@
         "mapKo": "코모도·고대 시대"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 148,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -7840,13 +7840,13 @@
         "mapKo": "타나토스 타워"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "대형",
     "sizeEn": "Large",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 154,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -7880,13 +7880,13 @@
         "mapKo": "타나토스 타워"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 155,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -7920,13 +7920,13 @@
         "mapKo": "코모도·고대 시대"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 148,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -7961,13 +7961,13 @@
         "mapCode": "ra_san01"
       }
     ],
-    "mapsNote": "PC 클라 ManualMap → Table_Map",
+    "mapsNote": "",
     "size": "소형",
     "sizeEn": "Small",
     "sizeNote": "크기 미확인 — 인게임 도감 확인",
     "zone": "Field",
     "manualMap": 87,
-    "expNote": "Base/Job = 기존 DB",
+    "expNote": "",
     "source": "hybrid: site EXP + client maps/name"
   },
   {
@@ -8001,13 +8001,13 @@
         "mapKo": "이카라기"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "중형",
     "sizeEn": "Medium",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 110,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -8041,13 +8041,13 @@
         "mapKo": "타나토스 타워"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "소형",
     "sizeEn": "Small",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 154,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -8081,13 +8081,13 @@
         "mapKo": "타나토스 타워"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "소형",
     "sizeEn": "Small",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 155,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -8121,13 +8121,13 @@
         "mapKo": "타나토스 타워"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "소형",
     "sizeEn": "Small",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 155,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   },
   {
@@ -8161,13 +8161,13 @@
         "mapKo": "타나토스 타워"
       }
     ],
-    "mapsNote": "계열 추정 출현지 (클라 맵ID 미해석)",
+    "mapsNote": "계열 추정",
     "size": "소형",
     "sizeEn": "Small",
-    "sizeNote": "PC 클라 Shape 기준 (미기입=중형 추정)",
+    "sizeNote": "크기 정보",
     "zone": "Field",
     "manualMap": 155,
-    "expNote": "Base/Job = PC클라 (기존 DB 없음)",
+    "expNote": "",
     "source": "ROM Classic KR PC client"
   }
 ]

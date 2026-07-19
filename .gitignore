@@ -18,6 +18,8 @@ _tmp_*
 _probe_*
 _audit_*
 _final_*
+_promote_*
+_verify_*
 *_dump.txt
 _novice_dump.txt
 _tablemap_dump.txt

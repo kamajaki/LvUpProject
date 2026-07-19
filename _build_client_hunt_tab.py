@@ -293,6 +293,18 @@ def family_map_fallback(ko_cli: str) -> list[dict]:
   return []
 
 
+def user_maps_note(note: str) -> str:
+  """UI에 노출할 출현지 메모 — 내부/클라 용어 제거."""
+  return {
+    "PC 클라 ManualMap → Table_Map": "",
+    "PC 클라 ManualMap → 구역만 확인": "",
+    "기존 DB 출현지 (클라 ManualMap 불일치 보정)": "",
+    "기존 DB 출현지 (클라 맵ID 미해석)": "",
+    "계열 추정 출현지 (클라 맵ID 미해석)": "계열 추정",
+    "출현지 미확인": "출현지 미확인",
+  }.get(note or "", "")
+
+
 def with_parent_label(maps: list[dict]) -> list[dict]:
   """기존 DB 맵에도 흔한 부모 접두를 붙여 표시 (가능하면)."""
   # 더 구체적인 패턴을 앞에 — 글래스트 지하수로가 프론테라로 붙지 않게
@@ -443,6 +455,8 @@ def build_pool() -> list[dict]:
       else:
         maps = []
         maps_note = "출현지 미확인"
+
+    maps_note = user_maps_note(maps_note)
 
     out.append({
       "id": mid,
@@ -1013,24 +1027,56 @@ def refresh_client_copy(text: str) -> str:
   return text
 
 
+def replace_monsters_const(text: str, pool: list[dict]) -> str:
+  """HTML의 const MONSTERS = [...] 를 신규 풀로 교체."""
+  m = re.search(r"const MONSTERS\s*=\s*(\[)", text)
+  if not m:
+    raise ValueError("const MONSTERS not found")
+  start = m.start(1)
+  i = start
+  depth = 0
+  in_str = False
+  esc = False
+  quote = ""
+  while i < len(text):
+    ch = text[i]
+    if in_str:
+      if esc:
+        esc = False
+      elif ch == "\\":
+        esc = True
+      elif ch == quote:
+        in_str = False
+    else:
+      if ch in "\"'":
+        in_str = True
+        quote = ch
+      elif ch == "[":
+        depth += 1
+      elif ch == "]":
+        depth -= 1
+        if depth == 0:
+          old = text[start : i + 1]
+          new = json.dumps(pool, ensure_ascii=False, separators=(",", ":"))
+          return text[:start] + new + text[i + 1 :]
+    i += 1
+  raise ValueError("failed to parse MONSTERS array")
+
+
 def main() -> None:
   pool = build_pool()
   out_json = ROOT / "leveling_monsters_client_full.json"
   out_json.write_text(json.dumps(pool, ensure_ascii=False, indent=2), encoding="utf-8")
-  payload = (
-    "const MONSTERS_CLIENT_FULL = "
-    + json.dumps(pool, ensure_ascii=False, separators=(",", ": "))
-    + ";"
-  )
 
   for name in ["레벨링_도우미.html", "index.html", "leveling-helper.html"]:
     path = ROOT / name
     text = path.read_text(encoding="utf-8")
-    text = strip_hybrid_toggle(text)
-    text = ensure_tab_button(text)
-    text = ensure_tab_panel(text)
-    text = refresh_client_copy(text)
-    text = patch_js(text, payload)
+    if 'data-tab="huntClient"' in text or "MONSTERS_CLIENT_FULL" in text:
+      raise SystemExit(
+        f"{name} still has old dual-tab markup. Run _promote_hunt_main.py first, "
+        "or restore a promoted HTML."
+      )
+    text = replace_monsters_const(text, pool)
     path.write_text(text, encoding="utf-8")
     print("patched", name)
 
@@ -1041,12 +1087,12 @@ def main() -> None:
     by_ko[m["ko"]].append(m)
   dups = {k: v for k, v in by_ko.items() if len(v) > 1}
   print("duplicate names", len(dups))
-  src = Counter(m.get("mapsNote", "")[:20] for m in pool)
-  print("map sources", dict(src))
-  for name in ("포링", "마이너우로스", "메카 하운드", "구미호", "타로우", "오크 아쳐"):
+  src = Counter(m.get("mapsNote", "") or "(없음)" for m in pool)
+  print("map notes", dict(src))
+  for name in ("포링", "마이너우로스", "메카 하운드", "구미호", "타로우", "데니로"):
     hits = [m for m in pool if m["ko"] == name]
     for h in hits:
-      print(name, "maps=", h["maps"])
+      print(name, "maps=", [x.get("ko") for x in h["maps"]], "note=", h.get("mapsNote"))
 
 
 if __name__ == "__main__":
