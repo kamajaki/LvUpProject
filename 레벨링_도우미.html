@@ -320,6 +320,130 @@
   }
   .tab-panel[hidden] { display: none !important; }
 
+  .coupon-page {
+    margin-top: 18px;
+  }
+  .coupon-hero {
+    margin: 0 0 16px;
+  }
+  .coupon-hero h2 {
+    margin: 0 0 8px;
+    font-size: 1.25rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .coupon-hero p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+  .coupon-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .coupon-group {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px 16px;
+  }
+  .coupon-group-title {
+    margin: 0 0 4px;
+    font-size: 1.02rem;
+    font-weight: 800;
+    color: var(--ink);
+  }
+  .coupon-until {
+    margin: 0 0 12px;
+    font-size: 0.86rem;
+    color: var(--muted);
+  }
+  .coupon-codes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .coupon-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .coupon-code {
+    font-family: "Consolas", "D2Coding", "Malgun Gothic", monospace;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: var(--accent2);
+    background: rgba(31, 107, 74, 0.08);
+    border: 1px solid rgba(31, 107, 74, 0.22);
+    border-radius: 10px;
+    padding: 8px 12px;
+    min-width: 160px;
+  }
+  .coupon-copy {
+    height: 38px;
+    padding: 0 14px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--ink);
+    font-weight: 800;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  .coupon-copy:hover {
+    border-color: var(--accent);
+    color: var(--accent2);
+  }
+  .coupon-copy.copied {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .coupon-howto {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: rgba(31, 107, 74, 0.08);
+    border: 1px solid rgba(31, 107, 74, 0.22);
+  }
+  .coupon-howto h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    font-weight: 900;
+  }
+  .coupon-howto p {
+    margin: 0;
+    color: var(--ink);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+  .coupon-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 28px;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--accent2);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 0.92rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .18s ease, transform .18s ease;
+    z-index: 50;
+  }
+  .coupon-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+
   .client-note {
     margin-top: 10px;
     padding: 10px 12px;
@@ -757,11 +881,12 @@
           </span>
         </div>
       </div>
-      <p>내 레벨을 입력하면 <strong>레벨 ~ 레벨+30</strong> 구간에서 추천 몹 3마리를 자세히 보여줍니다. 비우면 전체 목록을 봅니다. 카드 이미지는 <strong>카드 정보</strong> 탭에서 보세요.</p>
+      <p>내 레벨을 입력하면 <strong>레벨 ~ 레벨+29</strong> 구간에서 추천 몹 3마리를 자세히 보여줍니다. 비우면 전체 목록을 봅니다. 카드는 <strong>카드 정보</strong>, 쿠폰은 <strong>쿠폰 정보</strong> 탭에서 보세요.</p>
 
     <div class="main-tabs" id="mainTabs" role="tablist">
       <button type="button" role="tab" data-tab="hunt" class="active" aria-selected="true">사냥 추천</button>
       <button type="button" role="tab" data-tab="cards" aria-selected="false">카드 정보</button>
+      <button type="button" role="tab" data-tab="coupons" aria-selected="false">쿠폰 정보</button>
     </div>
     </header>
 
@@ -846,8 +971,129 @@
       <div class="card-gallery" id="cardGallery"></div>
     </div>
 
+    <div id="tabCoupons" class="tab-panel" role="tabpanel" hidden>
+      <section class="panel coupon-page">
+        <div class="coupon-hero">
+          <h2>라그나로크 M: Classic 정식 출시 기념 쿠폰 모음</h2>
+          <p>여기저기 흩어진 쿠폰을 한곳에 모았습니다. 코드 옆 <strong>복사</strong>를 누르면 바로 복사됩니다. <span style="color:var(--muted)">(7/19 갱신)</span></p>
+        </div>
+
+        <div class="coupon-list">
+          <article class="coupon-group">
+            <h3 class="coupon-group-title">오픈 기념 쿠폰</h3>
+            <p class="coupon-until">~ 2026/9/30 23:59</p>
+            <div class="coupon-codes">
+              <div class="coupon-row">
+                <code class="coupon-code">ROMCSTART</code>
+                <button type="button" class="coupon-copy" data-code="ROMCSTART">복사</button>
+              </div>
+              <div class="coupon-row">
+                <code class="coupon-code">ROMC0716</code>
+                <button type="button" class="coupon-copy" data-code="ROMC0716">복사</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="coupon-group">
+            <h3 class="coupon-group-title">모험패스 레벨 보충 지급</h3>
+            <div class="coupon-codes">
+              <div class="coupon-row">
+                <code class="coupon-code">KPL716HA</code>
+                <button type="button" class="coupon-copy" data-code="KPL716HA">복사</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="coupon-group">
+            <h3 class="coupon-group-title">사전 예약 4단계 달성 보상</h3>
+            <p class="coupon-until">~ 2026/9/30 23:59</p>
+            <div class="coupon-codes">
+              <div class="coupon-row">
+                <code class="coupon-code">ROMCGIFT</code>
+                <button type="button" class="coupon-copy" data-code="ROMCGIFT">복사</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="coupon-group">
+            <h3 class="coupon-group-title">카운트다운 기념 쿠폰</h3>
+            <p class="coupon-until">~ 2026/9/30 23:59</p>
+            <div class="coupon-codes">
+              <div class="coupon-row">
+                <code class="coupon-code">ROMC3DAYS</code>
+                <button type="button" class="coupon-copy" data-code="ROMC3DAYS">복사</button>
+              </div>
+              <div class="coupon-row">
+                <code class="coupon-code">ROMC2DAYS</code>
+                <button type="button" class="coupon-copy" data-code="ROMC2DAYS">복사</button>
+              </div>
+              <div class="coupon-row">
+                <code class="coupon-code">ROMC1DAYS</code>
+                <button type="button" class="coupon-copy" data-code="ROMC1DAYS">복사</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="coupon-group">
+            <h3 class="coupon-group-title">7월 16일 라이브 방송 깜짝 쿠폰</h3>
+            <p class="coupon-until">~ 2026/8/31 23:59</p>
+            <div class="coupon-codes">
+              <div class="coupon-row">
+                <code class="coupon-code">K7M4P9Q2</code>
+                <button type="button" class="coupon-copy" data-code="K7M4P9Q2">복사</button>
+              </div>
+              <div class="coupon-row">
+                <code class="coupon-code">N8X2R5L7</code>
+                <button type="button" class="coupon-copy" data-code="N8X2R5L7">복사</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="coupon-group">
+            <h3 class="coupon-group-title">라운지 가입자수 5000명 달성</h3>
+            <p class="coupon-until">~ 2026/9/30 23:59</p>
+            <div class="coupon-codes">
+              <div class="coupon-row">
+                <code class="coupon-code">ROMCLOUNGE</code>
+                <button type="button" class="coupon-copy" data-code="ROMCLOUNGE">복사</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="coupon-group">
+            <h3 class="coupon-group-title">이계 도전 개최중</h3>
+            <p class="coupon-until">~ 2026/9/30 23:59</p>
+            <div class="coupon-codes">
+              <div class="coupon-row">
+                <code class="coupon-code">ROMCGOGOGO</code>
+                <button type="button" class="coupon-copy" data-code="ROMCGOGOGO">복사</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="coupon-group">
+            <h3 class="coupon-group-title">7월 MVP 카드 합성 UP 이벤트</h3>
+            <p class="coupon-until">~ 2026/9/30 23:59</p>
+            <div class="coupon-codes">
+              <div class="coupon-row">
+                <code class="coupon-code">ROMCTHANKS</code>
+                <button type="button" class="coupon-copy" data-code="ROMCTHANKS">복사</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="coupon-howto">
+          <h3>쿠폰 사용 방법</h3>
+          <p>인게임 메뉴 → 설정 → 게임 설정 → 최하단 <strong>선물 교환</strong>에서 쿠폰 코드를 입력하면 보상을 받을 수 있습니다.</p>
+        </div>
+      </section>
+      <div class="coupon-toast" id="couponToast" aria-live="polite">복사되었습니다</div>
+    </div>
+
+
     <footer>
-      규칙: 사냥 구간 = 내 레벨 ~ 내 레벨+30 / 클래식은 몹 1마리당 EXP 기준이라 Total·Base·Job으로 추천합니다<br />
+      규칙: 사냥 구간 = 내 레벨 ~ 내 레벨+29 / 클래식은 몹 1마리당 EXP 기준이라 Total·Base·Job으로 추천합니다<br />
       착용 장비: 무기 크기 패널티(라그M 기준)를 반영해 추천 순위를 조정합니다 · 지팡이/책은 전 크기 100%<br />
       크기(소/중/대): PC 라그(rAthena) 기준 매칭 — 클래식과 다를 수 있음<br />
       알류·초고HP 몹(심연의 기사 등)은 레벨링 추천에서 제외했습니다.<br />
@@ -937,7 +1183,7 @@
       })
     }
     const lo = level
-    const hi = level + 30
+    const hi = level + 29
     return MONSTERS
       .filter((m) => m.lv >= lo && m.lv <= hi)
       .sort((a, b) => score(b, mode) - score(a, mode) || b.total - a.total)
@@ -1066,7 +1312,7 @@
       listTitle.textContent = "전체 몬스터 목록"
     } else {
       const wPart = getWeaponId() === "none" ? "" : ` / 장비: <strong>${wName}</strong>`
-      hint.innerHTML = `내 레벨 <strong>${level}</strong> → 사냥 구간 <strong>Lv.${level} ~ ${level + 30}</strong> / 목적: <strong>${modeLabel(mode)}</strong>${wPart} / 후보 ${list.length}마리`
+      hint.innerHTML = `내 레벨 <strong>${level}</strong> → 사냥 구간 <strong>Lv.${level} ~ ${level + 29}</strong> / 목적: <strong>${modeLabel(mode)}</strong>${wPart} / 후보 ${list.length}마리`
       recoTitle.style.display = ""
       recoTitle.textContent = getWeaponId() === "none"
         ? `추천 몬스터 3종 (${modeLabel(mode)})`
@@ -1077,7 +1323,7 @@
       } else {
         cards.innerHTML = top.map((m, i) => cardHtml(m, i + 1)).join("")
       }
-      listTitle.textContent = `후보 목록 (Lv.${level}~${level + 30})`
+      listTitle.textContent = `후보 목록 (Lv.${level}~${level + 29})`
     }
     renderTable(list)
   }
@@ -1127,6 +1373,53 @@
       render()
     })
   })
+
+  const couponToast = document.getElementById("couponToast")
+  let couponToastTimer = null
+  function showCouponToast(msg) {
+    if (!couponToast) return
+    couponToast.textContent = msg
+    couponToast.classList.add("show")
+    clearTimeout(couponToastTimer)
+    couponToastTimer = setTimeout(() => couponToast.classList.remove("show"), 1400)
+  }
+  async function copyCouponCode(code, btn) {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(code)
+      } else {
+        const ta = document.createElement("textarea")
+        ta.value = code
+        ta.setAttribute("readonly", "")
+        ta.style.position = "fixed"
+        ta.style.left = "-9999px"
+        document.body.appendChild(ta)
+        ta.select()
+        document.execCommand("copy")
+        document.body.removeChild(ta)
+      }
+      if (btn) {
+        const prev = btn.textContent
+        btn.textContent = "복사됨"
+        btn.classList.add("copied")
+        setTimeout(() => {
+          btn.textContent = prev
+          btn.classList.remove("copied")
+        }, 1200)
+      }
+      showCouponToast(code + " 복사됨")
+    } catch (e) {
+      showCouponToast("복사에 실패했습니다")
+    }
+  }
+  document.getElementById("tabCoupons")?.addEventListener("click", (e) => {
+    const btn = e.target.closest(".coupon-copy")
+    if (!btn) return
+    const code = btn.dataset.code || ""
+    if (!code) return
+    copyCouponCode(code, btn)
+  })
+
   document.querySelectorAll("#mainTabs button").forEach((btn) => {
     btn.addEventListener("click", () => {
       uiTab = btn.dataset.tab
@@ -1137,6 +1430,7 @@
       })
       document.getElementById("tabHunt").hidden = uiTab !== "hunt"
       document.getElementById("tabCards").hidden = uiTab !== "cards"
+      document.getElementById("tabCoupons").hidden = uiTab !== "coupons"
       if (uiTab === "cards") renderCardGallery()
       if (uiTab === "hunt") render()
     })

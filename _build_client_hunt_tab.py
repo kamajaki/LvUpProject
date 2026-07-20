@@ -724,7 +724,7 @@ JS_BLOCK = r"""
       })
     }
     const lo = level
-    const hi = level + 30
+    const hi = level + 29
     return MONSTERS_CLIENT_FULL
       .filter((m) => m.lv >= lo && m.lv <= hi)
       .sort((a, b) => scoreC(b, modeC) - scoreC(a, modeC) || b.total - a.total)
@@ -845,7 +845,7 @@ JS_BLOCK = r"""
       listTitle.textContent = "전체 몬스터 목록 (클라)"
     } else {
       const wPart = getWeaponIdC() === "none" ? "" : ` / 장비: <strong>${wName}</strong>`
-      hint.innerHTML = `내 레벨 <strong>${level}</strong> → 사냥 구간 <strong>Lv.${level} ~ ${level + 30}</strong> / 목적: <strong>${modeLabel(modeC)}</strong>${wPart} / 후보 ${list.length}마리 / <strong>PC클라</strong>`
+      hint.innerHTML = `내 레벨 <strong>${level}</strong> → 사냥 구간 <strong>Lv.${level} ~ ${level + 29}</strong> / 목적: <strong>${modeLabel(modeC)}</strong>${wPart} / 후보 ${list.length}마리 / <strong>PC클라</strong>`
       recoTitle.style.display = ""
       recoTitle.textContent = getWeaponIdC() === "none"
         ? `추천 몬스터 3종 (${modeLabel(modeC)} · 클라)`
@@ -856,7 +856,7 @@ JS_BLOCK = r"""
       } else {
         cards.innerHTML = top.map((m, i) => cardHtmlC(m, i + 1)).join("")
       }
-      listTitle.textContent = `후보 목록 클라 (Lv.${level}~${level + 30})`
+      listTitle.textContent = `후보 목록 (Lv.${level}~${level + 29})`
     }
     renderTableC(list)
   }
