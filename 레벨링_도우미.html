@@ -869,6 +869,36 @@
   }
   .stat span { display: block; color: var(--muted); font-size: 0.72rem; font-weight: 700; }
   .stat b { font-size: 0.98rem; }
+  .exp-grid {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr) max-content minmax(0, 1fr);
+    column-gap: 12px;
+    row-gap: 4px;
+    align-items: baseline;
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 8px 10px;
+  }
+  .exp-h {
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .exp-v {
+    color: var(--ink);
+    font-size: 0.98rem;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+  .exp-bonus {
+    color: #2f7a3a;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+  .exp-h.exp-bonus { font-size: 0.72rem; }
+  .exp-v.exp-bonus { font-size: 0.92rem; }
   .why {
     font-size: 0.88rem;
     color: var(--ink);
@@ -1417,8 +1447,16 @@
         </div>
         ${enLine}
         <div class="stats">
-          <div class="stat"><span>Base EXP</span><b>${m.base.toLocaleString()}</b></div>
-          <div class="stat"><span>Job EXP</span><b>${m.job.toLocaleString()}</b></div>
+          <div class="exp-grid">
+            <div class="exp-h">Base EXP</div>
+            <div class="exp-h exp-bonus">(+ 유성 운철)</div>
+            <div class="exp-h">Job EXP</div>
+            <div class="exp-h exp-bonus">(+ 유성 운철)</div>
+            <div class="exp-v">${m.base.toLocaleString()}</div>
+            <div class="exp-v exp-bonus">(+ ${(m.base * 3).toLocaleString()})</div>
+            <div class="exp-v">${m.job.toLocaleString()}</div>
+            <div class="exp-v exp-bonus">(+ ${(m.job * 3).toLocaleString()})</div>
+          </div>
           <div class="stat"><span>Total</span><b>${m.total.toLocaleString()}</b></div>
           <div class="stat"><span>크기</span><b>${sizeLabel}</b></div>
           <div class="stat"><span>HP</span><b>${m.hp.toLocaleString()}</b></div>
