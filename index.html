@@ -760,6 +760,101 @@
   .badge.base { background: #d9e8f2; color: var(--base); }
   .badge.job { background: #f2e4d9; color: var(--job); }
   .name { font-size: 1.15rem; font-weight: 800; margin: 0; }
+
+  .name-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 0 0 4px;
+  }
+  .name-row .name { margin: 0; }
+  .btn-card-info {
+    flex: 0 0 auto;
+    height: 28px;
+    padding: 0 10px;
+    border: 1px solid rgba(31, 107, 74, 0.35);
+    border-radius: 999px;
+    background: rgba(31, 107, 74, 0.1);
+    color: var(--accent2);
+    font-size: 0.78rem;
+    font-weight: 800;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .btn-card-info:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .btn-card-info.is-empty {
+    opacity: 0.55;
+  }
+  .name-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .name-cell .btn-card-info {
+    height: 26px;
+    padding: 0 8px;
+    font-size: 0.74rem;
+  }
+  .card-modal[hidden] { display: none !important; }
+  .card-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+  }
+  .card-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(28, 25, 21, 0.55);
+  }
+  .card-modal-panel {
+    position: relative;
+    z-index: 1;
+    width: min(420px, 100%);
+    max-height: min(86vh, 720px);
+    overflow: auto;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.28);
+    padding: 18px 16px 16px;
+  }
+  .card-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--ink);
+  }
+  .card-modal-body .card-item {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    background: transparent;
+  }
+  .card-modal-empty {
+    padding: 28px 12px;
+    text-align: center;
+    color: var(--muted);
+    font-weight: 700;
+  }
+
   .en { color: var(--muted); font-size: 0.82rem; margin: 0; }
   .stats {
     display: grid;
@@ -881,11 +976,11 @@
           </span>
         </div>
       </div>
-      <p>내 레벨을 입력하면 <strong>레벨 ~ 레벨+29</strong> 구간에서 추천 몹 3마리를 자세히 보여줍니다. 비우면 전체 목록을 봅니다. 카드는 <strong>카드 정보</strong>, 쿠폰은 <strong>쿠폰 정보</strong> 탭에서 보세요.</p>
+      <p>내 레벨을 입력하면 <strong>레벨 ~ 레벨+29</strong> 구간에서 추천 몹 3마리를 자세히 보여줍니다. 비우면 전체 목록을 봅니다. 몬스터 이름 옆 <strong>카드 정보</strong>를 누르면 카드가 팝업으로 열립니다. 쿠폰은 <strong>쿠폰 정보</strong> 탭에서 보세요.</p>
 
     <div class="main-tabs" id="mainTabs" role="tablist">
       <button type="button" role="tab" data-tab="hunt" class="active" aria-selected="true">사냥 추천</button>
-      <button type="button" role="tab" data-tab="cards" aria-selected="false">카드 정보</button>
+      <!-- <button type="button" role="tab" data-tab="cards" aria-selected="false">카드 정보</button> -->
       <button type="button" role="tab" data-tab="coupons" aria-selected="false">쿠폰 정보</button>
     </div>
     </header>
@@ -1091,6 +1186,15 @@
       <div class="coupon-toast" id="couponToast" aria-live="polite">복사되었습니다</div>
     </div>
 
+    <div id="cardModal" class="card-modal" hidden>
+      <div class="card-modal-backdrop" data-card-close="1"></div>
+      <div class="card-modal-panel" role="dialog" aria-modal="true" aria-labelledby="cardModalTitle">
+        <button type="button" class="card-modal-close" data-card-close="1" aria-label="닫기">×</button>
+        <div class="card-modal-body" id="cardModalBody"></div>
+      </div>
+    </div>
+
+
 
     <footer>
       규칙: 사냥 구간 = 내 레벨 ~ 내 레벨+29 / 클래식은 몹 1마리당 EXP 기준이라 Total·Base·Job으로 추천합니다<br />
@@ -1214,6 +1318,81 @@
     return `<div class="map-title">출현</div><div class="map-pills">${pills}</div>${note}`
   }
 
+
+  function resolveCardInfo(m) {
+    const byEn = m.en ? CARD_MAP[m.en] : null
+    let byKo = null
+    if (!byEn && m.ko) {
+      for (const key of Object.keys(CARD_MAP)) {
+        if (CARD_MAP[key].ko === m.ko) {
+          byKo = CARD_MAP[key]
+          break
+        }
+      }
+    }
+    const info = byEn || byKo || {}
+    return {
+      lv: m.lv,
+      en: m.en || info.en || "",
+      ko: m.ko || info.ko || "",
+      card: m.card || info.card || "",
+      cardStar: m.cardStar || info.cardStar || "",
+      cardType: m.cardType || info.cardType || "",
+      img: info.img || ""
+    }
+  }
+
+  function hasCardInfo(m) {
+    const c = resolveCardInfo(m)
+    return !!(c.card || c.cardStar || c.img)
+  }
+
+  function cardInfoBtnHtml(m, compact) {
+    const ok = hasCardInfo(m)
+    const label = compact ? "카드" : "카드 정보"
+    const cls = ok ? "btn-card-info" : "btn-card-info is-empty"
+    const en = escapeHtml(m.en || "")
+    const ko = escapeHtml(m.ko || "")
+    const id = m.id != null ? String(m.id) : ""
+    return `<button type="button" class="${cls}" data-open-card="1" data-card-en="${en}" data-card-ko="${ko}" data-card-id="${id}" ${ok ? "" : 'title="카드 이미지/옵션 정보가 아직 없어요"'}>${label}</button>`
+  }
+
+  function findMonsterForCard(en, ko, id) {
+    if (id) {
+      const hit = MONSTERS.find((m) => String(m.id) === String(id))
+      if (hit) return hit
+    }
+    if (en) {
+      const hit = MONSTERS.find((m) => m.en === en)
+      if (hit) return hit
+    }
+    if (ko) {
+      const hit = MONSTERS.find((m) => m.ko === ko)
+      if (hit) return hit
+    }
+    return { en, ko, lv: "", card: "", cardStar: "", cardType: "" }
+  }
+
+  function openCardModal(m) {
+    const body = document.getElementById("cardModalBody")
+    const modal = document.getElementById("cardModal")
+    const info = resolveCardInfo(m)
+    if (!(info.card || info.cardStar || info.img)) {
+      body.innerHTML = `<div class="card-modal-empty" id="cardModalTitle">${escapeHtml(info.ko || "몬스터")}<br/><span style="font-weight:600;font-size:0.92rem;">등록된 카드 정보가 없습니다.</span></div>`
+    } else {
+      body.innerHTML = cardItemHtml(info).replace("<h3>", '<h3 id="cardModalTitle">')
+    }
+    modal.hidden = false
+    document.body.style.overflow = "hidden"
+  }
+
+  function closeCardModal() {
+    const modal = document.getElementById("cardModal")
+    if (!modal || modal.hidden) return
+    modal.hidden = true
+    document.body.style.overflow = ""
+  }
+
   function cardHtml(m, rank) {
     const rankLabel = rank === 1 ? "1순위" : rank === 2 ? "2순위" : "3순위"
     const modeBadge =
@@ -1232,7 +1411,10 @@
           <span class="badge">${m.elem || "-"}</span>
           <span class="badge">${m.race || "-"}</span>
         </div>
-        <h3 class="name">${m.ko}</h3>
+        <div class="name-row">
+          <h3 class="name">${m.ko}</h3>
+          ${cardInfoBtnHtml(m, false)}
+        </div>
         ${enLine}
         <div class="stats">
           <div class="stat"><span>Base EXP</span><b>${m.base.toLocaleString()}</b></div>
@@ -1244,8 +1426,6 @@
         </div>
         <div class="why">Total ${m.total.toLocaleString()} · ${rank}순위</div>
         ${m.drop ? `<div class="meta">장비 드롭: ${m.drop}</div>` : ""}
-        ${m.card ? `<div class="meta">카드: ${m.card}</div>` : ""}
-        ${m.cardStar ? `<div class="meta">카드★: ${m.cardStar}</div>` : ""}
         <div class="maps">${mapsHtml(m)}</div>
       </article>`
   }
@@ -1278,7 +1458,7 @@
         const fit = fitInfo(m)
         return `<tr>
           <td>${m.lv}</td>
-          <td><strong>${m.ko}</strong></td>
+          <td><div class="name-cell"><strong>${m.ko}</strong>${cardInfoBtnHtml(m, true)}</div></td>
           <td>${m.size || "미확인"}</td>
           <td>${getWeaponId() === "none" ? "-" : fit.label}</td>
           <td>${m.elem || "-"}</td>
@@ -1345,6 +1525,21 @@
     syncLevelClear()
     el.focus()
     render()
+  })
+  document.addEventListener("click", (e) => {
+    const openBtn = e.target.closest("[data-open-card]")
+    if (openBtn) {
+      e.preventDefault()
+      const m = findMonsterForCard(openBtn.dataset.cardEn || "", openBtn.dataset.cardKo || "", openBtn.dataset.cardId || "")
+      openCardModal(m)
+      return
+    }
+    if (e.target.closest("[data-card-close]")) {
+      closeCardModal()
+    }
+  })
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeCardModal()
   })
   document.getElementById("weapon").addEventListener("change", render)
   document.getElementById("q").addEventListener("input", render)
