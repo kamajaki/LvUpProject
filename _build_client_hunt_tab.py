@@ -301,6 +301,7 @@ def user_maps_note(note: str) -> str:
     "기존 DB 출현지 (클라 ManualMap 불일치 보정)": "",
     "기존 DB 출현지 (클라 맵ID 미해석)": "",
     "계열 추정 출현지 (클라 맵ID 미해석)": "계열 추정",
+    "클라 맵 미수록 (ManualMap 미해석)": "클라 맵 미수록",
     "출현지 미확인": "출현지 미확인",
   }.get(note or "", "")
 
@@ -440,10 +441,11 @@ def build_pool() -> list[dict]:
       else:
         maps_note = "기존 DB 출현지 (클라 맵ID 미해석)"
     else:
+      # 클라 Table_Map에 ManualMap ID가 없으면 추정 맵을 넣지 않음 (미수록 지역은 목록 제외)
       fam = family_map_fallback(ko_cli)
       if fam:
-        maps = fam
-        maps_note = "계열 추정 출현지 (클라 맵ID 미해석)"
+        maps = []
+        maps_note = "클라 맵 미수록 (ManualMap 미해석)"
       elif cli_maps:
         maps = cli_maps
         maps_note = (
