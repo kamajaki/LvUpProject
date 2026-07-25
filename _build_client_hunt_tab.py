@@ -227,6 +227,61 @@ def client_maps_for(manual_map, client_maps: dict[int, dict]) -> list[dict]:
   }]
 
 
+# 기존(사이트) DB 출현지 표기 → 클라 Table_Map id (복수 출현 보강용)
+SITE_KO_TO_MAP_ID: dict[str, int] = {
+  "하멜른": 73,
+  "하멜린": 73,
+  "Hamelin": 73,
+  "스켈링턴": 72,
+  "스켈링튼": 72,
+  "Skellington": 72,
+  "안개의 숲": 71,
+  "안개숲": 71,
+  "The Misty Forest": 71,
+  "흐베르겔미르": 74,
+  "리히타르젠 필드": 77,
+  "이다 평원": 83,
+  "Ida Plain": 83,
+  "라헬 얼음 동굴": 84,
+  "Ice Cave": 84,
+  "라헬 신전 성역지하": 87,
+}
+
+
+def _map_dedupe_key(m: dict) -> str:
+  code = (m.get("mapCode") or m.get("en") or "").strip().lower()
+  if code:
+    return "c:" + code
+  ko = (m.get("mapKo") or m.get("ko") or "").replace(" ", "").replace("의", "")
+  return "k:" + ko
+
+
+def merge_extra_site_maps(
+  maps: list[dict],
+  site_maps: list[dict],
+  client_maps: dict[int, dict],
+) -> list[dict]:
+  """ManualMap 1곳만 잡혀도 사이트 DB에 있는 추가 출현지를 붙인다."""
+  out = list(maps or [])
+  seen = {_map_dedupe_key(m) for m in out}
+  for sm in site_maps or []:
+    sko = (sm.get("ko") or "").strip()
+    sen = (sm.get("en") or "").strip()
+    mid = SITE_KO_TO_MAP_ID.get(sko) or SITE_KO_TO_MAP_ID.get(sen)
+    if mid is None:
+      continue
+    extra = client_maps_for(mid, client_maps)
+    if not extra:
+      continue
+    em = extra[0]
+    k = _map_dedupe_key(em)
+    if k in seen:
+      continue
+    out.append(em)
+    seen.add(k)
+  return out
+
+
 def maps_blob(maps: list[dict]) -> str:
   parts = []
   for m in maps or []:
@@ -431,11 +486,12 @@ def build_pool() -> list[dict]:
     # Transport 구역명만 있는 stub는 계열 추정이 더 구체하면 후순위로
     cli_is_stub = bool(cli_maps) and (cli_maps[0].get("en") or "").startswith("map_")
     if cli_maps and not cli_is_stub and not client_map_conflicts_site(cli_maps, site_maps):
-      maps = cli_maps
+      maps = merge_extra_site_maps(cli_maps, site_maps, client_maps)
       maps_note = "PC 클라 ManualMap → Table_Map"
       client_map_n += 1
     elif site_maps:
       maps = with_parent_label(site_maps)
+      maps = merge_extra_site_maps(maps, site_maps, client_maps)
       if cli_maps and not cli_is_stub:
         maps_note = "기존 DB 출현지 (클라 ManualMap 불일치 보정)"
       else:

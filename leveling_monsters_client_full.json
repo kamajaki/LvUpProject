@@ -6124,6 +6124,13 @@
         "parentKo": "니플헤임",
         "mapKo": "스켈링튼",
         "mapCode": "nif_fild2"
+      },
+      {
+        "ko": "니플헤임 - 하멜른",
+        "en": "nif_fild3",
+        "parentKo": "니플헤임",
+        "mapKo": "하멜른",
+        "mapCode": "nif_fild3"
       }
     ],
     "mapsNote": "",
@@ -6206,6 +6213,13 @@
         "parentKo": "니플헤임",
         "mapKo": "안개숲",
         "mapCode": "nif_fild1"
+      },
+      {
+        "ko": "니플헤임 - 스켈링튼",
+        "en": "nif_fild2",
+        "parentKo": "니플헤임",
+        "mapKo": "스켈링튼",
+        "mapCode": "nif_fild2"
       }
     ],
     "mapsNote": "",
@@ -6288,6 +6302,13 @@
         "parentKo": "니플헤임",
         "mapKo": "안개숲",
         "mapCode": "nif_fild1"
+      },
+      {
+        "ko": "니플헤임 - 하멜른",
+        "en": "nif_fild3",
+        "parentKo": "니플헤임",
+        "mapKo": "하멜른",
+        "mapCode": "nif_fild3"
       }
     ],
     "mapsNote": "",
@@ -6411,6 +6432,13 @@
         "parentKo": "니플헤임",
         "mapKo": "스켈링튼",
         "mapCode": "nif_fild2"
+      },
+      {
+        "ko": "니플헤임 - 하멜른",
+        "en": "nif_fild3",
+        "parentKo": "니플헤임",
+        "mapKo": "하멜른",
+        "mapCode": "nif_fild3"
       }
     ],
     "mapsNote": "",
