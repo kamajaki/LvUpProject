@@ -30,6 +30,7 @@ extracted_romc/monsters.json
 extracted_romc/items.json
 extracted_romc/classic_field_monsters.json
 extracted_romc/site_vs_client_compare.json
+extracted_romc/rewards.json
 extracted_romc/_extract*.txt
 
 # 구버전 클라 테스트 데이터
